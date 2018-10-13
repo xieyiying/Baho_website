@@ -2,7 +2,7 @@
     <div class="Index_page">
         <div class="index_container">
             <!-- 轮播图 -->
-            <!-- <v_banner :bannerImage=bannerImage></v_banner> -->
+            <v_banner :bannerImage=bannerImage></v_banner>
             <!-- 新闻 -->
             <div class="index_news">
                 <div class="news_content">
