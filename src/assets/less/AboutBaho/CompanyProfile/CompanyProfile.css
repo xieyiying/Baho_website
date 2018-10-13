@@ -1,0 +1,83 @@
+.about_content {
+  width: 100%;
+}
+.about_content .about_banner {
+  width: 100%;
+  height: 428px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about_content .content_container {
+  width: 1150px;
+  height: 657px;
+  margin: 0 auto;
+}
+.about_content .content_container .content_left {
+  width: 775px;
+  border-right: 1px solid #ccc;
+  float: left;
+  margin: 56px 23px 43px 0;
+  padding-right: 23px;
+}
+.about_content .content_container .content_left .title {
+  width: 100%;
+  height: 118px;
+  margin-bottom: 40px;
+}
+.about_content .content_container .content_left .title span {
+  display: inline-block;
+}
+.about_content .content_container .content_left .title span:first-child {
+  float: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 277px;
+  height: 118px;
+}
+.about_content .content_container .content_left .title span:last-child {
+  float: right;
+  width: 399px;
+  height: 57px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 58px;
+}
+.about_content .content_container .content_left .text {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  overflow: hidden;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+}
+.about_content .content_container .content_left .text p {
+  text-indent: 2em;
+  line-height: 25px;
+  margin-bottom: 10px;
+}
+.about_content .content_container .content_left .text div {
+  width: 100%;
+}
+.about_content .content_container .content_right {
+  width: 313px;
+  float: right;
+  margin-top: 56px;
+}
+.about_content .content_container .content_right span {
+  display: block;
+  margin-bottom: 10px;
+  width: 313px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about_content .content_container .content_right span:first-child {
+  height: 283px;
+}
+.about_content .content_container .content_right span:nth-child(2) {
+  height: 109px;
+}
+.about_content .content_container .content_right span:last-child {
+  height: 148px;
+}

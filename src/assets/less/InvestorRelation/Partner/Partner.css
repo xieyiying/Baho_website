@@ -1,0 +1,21 @@
+.partner {
+  width: 100%;
+}
+.partner_content {
+  width: 100%;
+  height: auto;
+  margin-bottom: 55px;
+}
+.partner_content .partner_content_container {
+  width: 1360px;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+.partner_content .partner_content_container li {
+  float: left;
+  margin: 0 5px;
+  width: 443px;
+  height: 596px;
+  background-repeat: no-repeat;
+}

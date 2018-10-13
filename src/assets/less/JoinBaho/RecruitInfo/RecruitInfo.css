@@ -1,0 +1,110 @@
+.recruit_info {
+  width: 100%;
+}
+.recruit_info_content {
+  width: 100%;
+}
+.recruit_info_content .recruit_info_banner {
+  width: 100%;
+  height: 585px;
+  background-repeat: no-repeat;
+}
+.recruit_info_content .recruit_info_detial {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: #f8f9fb;
+  padding: 40px 0;
+}
+.recruit_info_content .recruit_info_detial .detial_box {
+  width: 1130px;
+  height: auto;
+  margin: 0 auto;
+}
+.recruit_info_content .recruit_info_detial .detial_box h2 {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 65px;
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 40px;
+  background: #e1e2e4;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial {
+  width: 100%;
+  height: auto;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_left {
+  width: 210px;
+  height: auto;
+  float: left;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_left li {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #666;
+  font-size: 13px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  cursor: pointer;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_left li.active {
+  color: #10386B;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right {
+  float: right;
+  width: 850px;
+  height: auto;
+  background: #fff;
+  padding: 0 20px 20px 20px;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .main_point {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .main_point li {
+  height: 100%;
+  line-height: 40px;
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  color: #555;
+  margin-right: 10px;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .main_point li.zh_li {
+  width: 212px;
+  margin-right: 0;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .main_point li.zh_li:first-child {
+  width: 190px;
+  padding-left: 15px;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .duty_require {
+  width: 700px;
+  height: auto;
+  overflow: hidden;
+  padding: 25px 75px;
+  color: #555;
+  font-size: 13px;
+  line-height: 25px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .duty_require h3 {
+  font-size: 13px;
+  color: #555;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .duty_require div:first-child {
+  margin-bottom: 20px;
+}
+.recruit_info_content .recruit_info_detial .detial_box .detial .detial_right .contact_info {
+  line-height: 25px;
+  padding: 25px 75px;
+  color: #555;
+  font-size: 13px;
+}

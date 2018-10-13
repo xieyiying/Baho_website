@@ -1,0 +1,164 @@
+.news_center {
+    width: 100%;
+    font-size: 10px;
+}
+.news_centet_content {
+    width: 100%;
+    background: #f8f9fb;
+    padding: 30px 0;
+    .news_center_container {
+        width: 1150px;
+        margin: 0 auto;
+        .first_list {
+            width: 100%;
+            height: 200px;
+            li {
+                float: left;
+                margin-right: 6px;
+                position: relative;
+                text-align: center;
+                &:hover {
+                    .shadow {
+                        cursor: pointer;
+                        display: block;
+                    }
+                }
+                &:first-child {
+                    width: 508px;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &:nth-child(2), &:last-child {
+                    width: 315px;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .shadow {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(16, 56, 107, .8);
+                    display: none;
+                    p {
+                        font-size: 20px;
+                        color: #fff;
+                        margin-top: 68px;
+                        margin-bottom: 5px;
+                    }
+                    span {
+                        display: inline-block;
+                        width: 120px;
+                        height: 25px;
+                        border-radius: 20px;
+                        background-color: #ccc;
+                        color: #10386B;
+                        line-height: 25px;
+                    }
+                }
+            }
+        }
+        .news_group {
+            margin-top: 6px;
+            width: 100%;
+            ul {
+                width: 100%;
+                height: 504px;
+                position: relative;
+                li {
+                    width: 572px;
+                    height: 249px;
+                    position: relative;
+                    text-align: center;
+                    &:hover {
+                        .shadow {
+                            cursor: pointer;
+                            display: block;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .shadow {
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(16, 56, 107, .8);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: none;
+                        p {
+                            font-size: 20px;
+                            color: #fff;
+                            margin-top: 90px;
+                            margin-bottom: 5px;
+                        }
+                        span {
+                            display: inline-block;
+                            width: 120px;
+                            height: 25px;
+                            border-radius: 20px;
+                            background-color: #ccc;
+                            color: #10386B;
+                            line-height: 25px;
+                        }
+                    }
+                }
+                &.first_group {
+                    li {
+                        &:first-child {
+                            margin-bottom: 6px;
+                        }
+                        &:last-child {
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            .shadow {
+                                p {
+                                    margin-top: 210px;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                &.second_group {
+                    margin-top: 6px;
+                    li {
+                        &:first-child {
+                            float: left;
+                            height: 100%;
+                            .shadow {
+                                p {
+                                    margin-top: 210px;
+                                }
+                            }
+                        }
+                        &:nth-child(2), &:last-child {
+                            float: right;
+                        }
+                        &:nth-child(2) {
+                            margin-bottom: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+.news_center {
+  width: 100%;
+  font-size: 10px;
+}
+.news_centet_content {
+  width: 100%;
+  background: #f8f9fb;
+  padding: 30px 0;
+}
+.news_centet_content .news_center_container {
+  width: 1150px;
+  margin: 0 auto;
+}
+.news_centet_content .news_center_container .first_list {
+  width: 100%;
+  height: 200px;
+}
+.news_centet_content .news_center_container .first_list li {
+  float: left;
+  margin-right: 6px;
+  position: relative;
+  text-align: center;
+}
+.news_centet_content .news_center_container .first_list li:hover .shadow {
+  cursor: pointer;
+  display: block;
+}
+.news_centet_content .news_center_container .first_list li:first-child {
+  width: 508px;
+  height: 100%;
+}
+.news_centet_content .news_center_container .first_list li:first-child img {
+  width: 100%;
+  height: 100%;
+}
+.news_centet_content .news_center_container .first_list li:nth-child(2),
+.news_centet_content .news_center_container .first_list li:last-child {
+  width: 315px;
+  height: 100%;
+}
+.news_centet_content .news_center_container .first_list li:nth-child(2) img,
+.news_centet_content .news_center_container .first_list li:last-child img {
+  width: 100%;
+  height: 100%;
+}
+.news_centet_content .news_center_container .first_list li:last-child {
+  margin-right: 0;
+}
+.news_centet_content .news_center_container .first_list li img {
+  width: 100%;
+  height: 100%;
+}
+.news_centet_content .news_center_container .first_list li .shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(16, 56, 107, 0.8);
+  display: none;
+}
+.news_centet_content .news_center_container .first_list li .shadow p {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 68px;
+  margin-bottom: 5px;
+}
+.news_centet_content .news_center_container .first_list li .shadow span {
+  display: inline-block;
+  width: 120px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: #ccc;
+  color: #10386B;
+  line-height: 25px;
+}
+.news_centet_content .news_center_container .news_group {
+  margin-top: 6px;
+  width: 100%;
+}
+.news_centet_content .news_center_container .news_group ul {
+  width: 100%;
+  height: 504px;
+  position: relative;
+}
+.news_centet_content .news_center_container .news_group ul li {
+  width: 572px;
+  height: 249px;
+  position: relative;
+  text-align: center;
+}
+.news_centet_content .news_center_container .news_group ul li:hover .shadow {
+  cursor: pointer;
+  display: block;
+}
+.news_centet_content .news_center_container .news_group ul li img {
+  width: 100%;
+  height: 100%;
+}
+.news_centet_content .news_center_container .news_group ul li .shadow {
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 56, 107, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.news_centet_content .news_center_container .news_group ul li .shadow p {
+  font-size: 20px;
+  color: #fff;
+  margin-top: 90px;
+  margin-bottom: 5px;
+}
+.news_centet_content .news_center_container .news_group ul li .shadow span {
+  display: inline-block;
+  width: 120px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: #ccc;
+  color: #10386B;
+  line-height: 25px;
+}
+.news_centet_content .news_center_container .news_group ul.first_group li:first-child {
+  margin-bottom: 6px;
+}
+.news_centet_content .news_center_container .news_group ul.first_group li:last-child {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.news_centet_content .news_center_container .news_group ul.first_group li:last-child .shadow p {
+  margin-top: 210px;
+}
+.news_centet_content .news_center_container .news_group ul.second_group {
+  margin-top: 6px;
+}
+.news_centet_content .news_center_container .news_group ul.second_group li:first-child {
+  float: left;
+  height: 100%;
+}
+.news_centet_content .news_center_container .news_group ul.second_group li:first-child .shadow p {
+  margin-top: 210px;
+}
+.news_centet_content .news_center_container .news_group ul.second_group li:nth-child(2),
+.news_centet_content .news_center_container .news_group ul.second_group li:last-child {
+  float: right;
+}
+.news_centet_content .news_center_container .news_group ul.second_group li:nth-child(2) {
+  margin-bottom: 6px;
+}
