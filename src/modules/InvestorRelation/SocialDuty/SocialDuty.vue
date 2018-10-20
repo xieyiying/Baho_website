@@ -48,7 +48,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../../assets/less/InvestorRelation/SocialDuty/SocialDuty.css';
 </style>
 

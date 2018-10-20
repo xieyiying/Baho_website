@@ -90,6 +90,6 @@
         },
     };
 </script>
-<style scoped>
+<style>
     @import "../../assets/less/Header/Header.css";
 </style>

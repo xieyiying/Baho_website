@@ -1,9 +1,7 @@
 <template>
     <div class="heart_sound">
         <div class="video_box">
-            <div class="video_player">
-                <embed :src="videoUrl" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="100%" height="100%" loop="true" autostart="true"  play="true">
-            </div>
+            <div class="video_player" v-html="videoHtml"></div>
         </div>
         <div class="bottom_soild">
             <div class="left_soild"></div>
@@ -17,7 +15,8 @@
         data() {
             return {
                 videoUrl: '',
-                language: 'zh'
+                language: 'zh',
+                videoHtml: ''
             }
         },
         methods: {
@@ -26,6 +25,15 @@
                     languageType: language
                 }, res => {
                     this.videoUrl = res.body.list[0].videoUrl
+                    this.videoHtml = `<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"       codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="609" width="960">
+                                        <param name="quality" value="high">
+                                        <param name="movie" value="${this.videoUrl}">
+                                        <embed height="609" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="${this.videoUrl}" type="application/x-shockwave-flash" width="960">
+                                        <!--[if lt IE9]> 
+                                            <span>该浏览器不支持该标签，请使用IE11或谷歌等高版本浏览器</span>
+                                        <![endif]-->
+                                    </object>`
+                    
                 })
             }
         },
@@ -39,7 +47,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     .heart_sound {
         width: 100%;
     }
@@ -54,10 +62,7 @@
         width: 960px;
         height: 609px;
         margin: 0 auto;
-        /* background-color: #ccc; */
-    }
-    .video_box .video_player video {
-        width: 100%;
-        height: 100%;
+        position: relative;
+        z-index: 1;
     }
 </style>

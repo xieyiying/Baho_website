@@ -102,7 +102,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../assets/less/Index/Index.css';
 </style>
 

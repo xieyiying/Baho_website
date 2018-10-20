@@ -4,10 +4,10 @@
             <template v-if="language == 'zh'">
                 <ul>
                     <li>
-                        <a class="footer_icon" @click="changeActive('home', 0)"></a>
+                        <a class="footer_icon" @click="changeActive('brand', 2)"></a>
                     </li>
                     <li>
-                        <a class="footer_icon" @click="changeActive('brand', 2)"></a>
+                        <a class="footer_icon" @click="changeActive('news', 3)"></a>
                     </li>
                     <li>
                         <a class="footer_icon" @click="changeActive('offers', 5)"></a>
@@ -17,10 +17,10 @@
             <template v-else>
                 <ul>
                     <li>
-                        <a class="footer_icon_en" @click="changeActive('home', 0)"></a>
+                        <a class="footer_icon_en" @click="changeActive('brand', 2)"></a>
                     </li>
                     <li>
-                        <a class="footer_icon_en" @click="changeActive('brand', 2)"></a>
+                        <a class="footer_icon_en" @click="changeActive('news', 3)"></a>
                     </li>
                     <li>
                         <a class="footer_icon_en" @click="changeActive('offers', 5)"></a>
@@ -44,11 +44,12 @@
         },
         methods: {
             changeActive(name, isActive) {
-                if(name == 'brand') {
-                    this.$router.push({name: name, params: {type: 0}});
-                } else {
-                    this.$router.push({name: name});
-                }
+                // if(name == 'brand') {
+                //     this.$router.push({name: name, params: {type: 0}});
+                // } else {
+                //     this.$router.push({name: name});
+                // }
+                this.$router.push({name: name});
                 
                 this.$Bus.$emit('newActive', isActive)
             },
@@ -61,6 +62,6 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../assets/less/Footer/Footer.css';
 </style>

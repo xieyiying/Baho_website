@@ -48,7 +48,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../../assets/less/InvestorRelation/Partner/Partner.css';
 </style>
 

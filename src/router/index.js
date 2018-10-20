@@ -9,6 +9,11 @@ export default new Router({
     // 首页
     {
       path: '/',
+      redirect: { name: 'home' }
+    },
+    // 首页
+    {
+      path: '/home',
       name: 'home',
       component: () => import('@/modules/Index/Index.vue')
     },
@@ -104,7 +109,7 @@ export default new Router({
     },
     // 加入贝豪
     {
-      path: '/Activity',
+      path: '/JoinBaho',
       name: 'join',
       component: () => import('@/modules/JoinBaho/Activity/Activity.vue')
     },

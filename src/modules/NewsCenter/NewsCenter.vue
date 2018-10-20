@@ -70,7 +70,7 @@
         methods: {
             // 获取新闻列表
             getNewsData(language) {
-                this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/ webListNews', {
+                this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/webListNews', {
                     languageType: language
                 }, res => {
                     this.topListNews = res.body.topList
@@ -94,6 +94,6 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../assets/less/NewsCenter/NewsCenter.css';
 </style>

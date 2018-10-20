@@ -4,7 +4,7 @@
             <div class="recruit_info_banner" :style="{backgroundImage: 'url(' + path +')'}"></div>
             <div class="recruit_info_detial">
                 <div class="detial_box">
-                    <h2>人才招聘</h2>
+                    <h2>{{language == 'zh' ? '人才招聘' : 'Personnel Recruitment'}}</h2>
                     <div class="detial">
                         <ul class="detial_left">
                             <li 
@@ -125,7 +125,7 @@
         }
     } 
 </script>
-<style scoped>
+<style>
     @import '../../../assets/less/JoinBaho/RecruitInfo/RecruitInfo.css';
 </style>
 

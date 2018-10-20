@@ -1,12 +1,14 @@
 .social_duty {
   width: 100%;
 }
-.social_duty_content {
+.social_duty .social_duty_content {
   width: 100%;
   height: 798px;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.social_duty_content .text {
+.social_duty .social_duty_content .text {
   width: 830px;
   margin: 0 auto;
   padding-top: 440PX;
@@ -20,7 +22,7 @@
   overflow: hidden;
   height: 300px;
 }
-.social_duty_content .text .anim_box {
+.social_duty .social_duty_content .text .anim_box {
   top: 300px;
   position: relative;
   transition: top 5s;

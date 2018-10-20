@@ -4,6 +4,7 @@
   min-height: 900px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 .sub_brands .sub_brands_content {
@@ -29,6 +30,7 @@
   height: 85px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   margin: 0 auto;
   margin-top: 30px;
 }
@@ -37,9 +39,10 @@
   color: #fff;
   text-align: left;
   padding: 0 20px;
-  margin-top: 20px;
   line-height: 25px;
-  height: 100px;
+}
+.sub_brands .sub_brands_content p:first-child {
+  margin-top: 20px;
 }
 .sub_brands .sub_brands_content a {
   display: block;
@@ -61,7 +64,7 @@
   left: 50%;
   margin-top: -200px;
   margin-left: -400px;
-  background: url(http://47.99.165.110:8068/photos/shadow.png) no-repeat;
+  background: url(../../../../../static/img/shadow.png) no-repeat;
   z-index: 2;
 }
 .sub_brands .anim_line {
@@ -77,22 +80,71 @@
 }
 .sub_brands .slideInRight {
   -webkit-animation: slideInRight 1s 1;
+  -moz-animation: slideInRight 1s 1;
+  -o-animation: slideInRight 1s 1;
+  -ms-animation: slideInRight 1s 1;
   animation: slideInRight 1s 1;
+}
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 @-webkit-keyframes slideInRight {
   from {
-    -webkit-transform: translate3d(100%, 100%, 0);
     transform: translate3d(100%, 100%, 0);
-    visibility: visible;
   }
   to {
-    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-moz-keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-ms-keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
     transform: translate3d(0, 0, 0);
   }
 }
 .sub_brands .slideincrease {
   -webkit-animation: slideincrease 2s 1;
+  -moz-animation: slideincrease 2s 1;
+  -o-animation: slideincrease 2s 1;
+  -ms-animation: slideincrease 2s 1;
   animation: slideincrease 2s 1;
+}
+@keyframes slideincrease {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 600px;
+    height: 460px;
+  }
 }
 @-webkit-keyframes slideincrease {
   0% {
@@ -108,14 +160,46 @@
     height: 460px;
   }
 }
-@-webkit-keyframes slideInRight {
-  from {
-    -webkit-transform: translate3d(100%, 100%, 0);
-    transform: translate3d(100%, 100%, 0);
+@-moz-keyframes slideincrease {
+  0% {
+    width: 0px;
+    height: 0px;
   }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  50% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 600px;
+    height: 460px;
+  }
+}
+@-o-keyframes slideincrease {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 600px;
+    height: 460px;
+  }
+}
+@-ms-keyframes slideincrease {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 600px;
+    height: 460px;
   }
 }
 .sub_brands .mask_layer {

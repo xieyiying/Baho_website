@@ -2,24 +2,15 @@
     <div class="company_profile">
         <div class="about_content">
             <span class="about_banner" :style="{backgroundImage: 'url(' + addrMasterMap + ')'}"></span>
-            <div class="content_container">
-                <div class="content_left">
+            <div class="content_container clearfix">
+                <div class="content_left clearfix">
                     <div class="title">
                         <span :style="{backgroundImage: 'url(' + addrLogo + ')'}"></span>
                         <span :style="{backgroundImage: 'url(' + addrTitle + ')'}"></span>
                     </div>
-                    <div class="text">
-                        <template v-if="aboutChildType == 1">
-                            <div v-html="content">
-                            </div>
-                        </template>
-                        <template v-else>
-                            <p v-html="content"></p>
-                        </template>
-                        
-                    </div>
+                    <div class="text" v-html="content"></div>
                 </div>
-                <div class="content_right">
+                <div class="content_right clearfix">
                     <span :style="{backgroundImage: 'url(' + addrSideOne + ')'}"></span>
                     <span :style="{backgroundImage: 'url(' + addrSideTwo + ')'}"></span>
                     <span :style="{backgroundImage: 'url(' + addrSideThree + ')'}"></span>
@@ -50,8 +41,6 @@
         },
         methods: {
             getAboutBahoDate() {
-                console.log(1)
-                console.log("language", this.language)
                 this.aboutChildType = this.$route.params.type
                 this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatAbout/getWebNetAboutInfo', {
                     type: this.aboutChildType,

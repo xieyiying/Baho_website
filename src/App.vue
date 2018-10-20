@@ -17,10 +17,10 @@ export default {
   },
   mounted(){
     // 关闭浏览器窗口的时候清空浏览器缓存在localStorage的数据
-    // window.onunload = function (e) {
-    //     var storage = window.localStorage;
-    //     storage.clear()
-    // }
+    window.onunload = function (e) {
+        var storage = window.localStorage;
+        storage.clear()
+    }
   }
 }
 </script>

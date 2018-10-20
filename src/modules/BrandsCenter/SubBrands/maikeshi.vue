@@ -3,9 +3,7 @@
         <div class="sub_brands_content">
             <h2>{{brandTitle}}</h2>
             <span :style="{backgroundImage: 'url(' + brandLogo + ')'}"></span>
-            <p>
-                {{brandContent}}
-            </p>
+            <p v-html="brandContent"></p>
             <a :href="url" target="_blank">{{language == 'zh' ? '了解更多' : 'Learn More'}}</a>
         </div>
         <div class="anim_box slideInRight"></div>
@@ -48,12 +46,9 @@
                 this.getSubBrandsData()
             })
         },
-        // watch: {
-        //     '$route': 'getSubBrandsData'
-        // },
     }
 </script>
-<style scoped>
+<style>
     @import '../../../assets/less/BrandsCenter/SubBrands/SubBrands.css';
 </style>
 

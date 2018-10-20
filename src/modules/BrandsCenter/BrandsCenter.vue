@@ -60,6 +60,6 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../assets/less/BrandsCenter/BrandsCenter.css';
 </style>

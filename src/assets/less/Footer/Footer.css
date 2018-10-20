@@ -1,22 +1,23 @@
 .footer {
   width: 100%;
 }
-.footer_container {
+.footer .footer_container {
   width: 861px;
+  height: 300px;
   margin: 0 auto;
 }
-.footer_container ul {
+.footer .footer_container ul {
   width: 100%;
   height: 150px;
 }
-.footer_container ul li {
+.footer .footer_container ul li {
   width: 33.33333333%;
   height: 100%;
   float: left;
   position: relative;
 }
-.footer_container ul li .footer_icon,
-.footer_container ul li .footer_icon_en {
+.footer .footer_container ul li .footer_icon,
+.footer .footer_container ul li .footer_icon_en {
   width: 60px;
   height: 60px;
   display: block;
@@ -27,50 +28,51 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.footer_container ul li:first-child .footer_icon {
-  background: url(../../../../static/img/shouye.png) no-repeat;
-}
-.footer_container ul li:first-child .footer_icon:hover {
-  background: url(../../../../static/img/shouye_active.png) no-repeat;
-}
-.footer_container ul li:first-child .footer_icon_en {
-  background: url(../../../../static/img/shouye.png) no-repeat;
-}
-.footer_container ul li:first-child .footer_icon_en:hover {
-  background: url(../../../../static/img/shouye_En.png) no-repeat;
-}
-.footer_container ul li:nth-child(2) .footer_icon {
+.footer .footer_container ul li:first-child .footer_icon {
   background: url(../../../../static/img/pinpai.png) no-repeat;
 }
-.footer_container ul li:nth-child(2) .footer_icon:hover {
+.footer .footer_container ul li:first-child .footer_icon:hover {
   background: url(../../../../static/img/pinpai_active.png) no-repeat;
 }
-.footer_container ul li:nth-child(2) .footer_icon_en {
+.footer .footer_container ul li:first-child .footer_icon_en {
   background: url(../../../../static/img/pinpai.png) no-repeat;
 }
-.footer_container ul li:nth-child(2) .footer_icon_en:hover {
+.footer .footer_container ul li:first-child .footer_icon_en:hover {
   background: url(../../../../static/img/pinpai_EN.png) no-repeat;
 }
-.footer_container ul li:last-child .footer_icon {
+.footer .footer_container ul li:nth-child(2) .footer_icon {
+  background: url(../../../../static/img/news_icon.png) no-repeat;
+}
+.footer .footer_container ul li:nth-child(2) .footer_icon:hover {
+  background: url(../../../../static/img/news.png) no-repeat;
+}
+.footer .footer_container ul li:nth-child(2) .footer_icon_en {
+  background: url(../../../../static/img/news_icon.png) no-repeat;
+}
+.footer .footer_container ul li:nth-child(2) .footer_icon_en:hover {
+  background: url(../../../../static/img/news_en.png) no-repeat;
+}
+.footer .footer_container ul li:last-child .footer_icon {
   background: url(../../../../static/img/zhaopin.png) no-repeat;
 }
-.footer_container ul li:last-child .footer_icon:hover {
+.footer .footer_container ul li:last-child .footer_icon:hover {
   background: url(../../../../static/img/zhaopin_active.png) no-repeat;
 }
-.footer_container ul li:last-child .footer_icon_en {
+.footer .footer_container ul li:last-child .footer_icon_en {
   background: url(../../../../static/img/zhaopin.png) no-repeat;
 }
-.footer_container ul li:last-child .footer_icon_en:hover {
+.footer .footer_container ul li:last-child .footer_icon_en:hover {
   background: url(../../../../static/img/zhaopin_EN.png) no-repeat;
 }
-.footer_container .footer_text {
+.footer .footer_container .footer_text {
   width: 100%;
+  height: 60px;
   text-align: center;
   font-size: 12px;
   color: #555;
   margin-top: 60px;
   margin-bottom: 50px;
 }
-.footer_container .footer_text p:first-child {
+.footer .footer_container .footer_text p:first-child {
   margin-bottom: 10px;
 }

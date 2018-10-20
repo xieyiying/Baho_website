@@ -1,8 +1,8 @@
 <template>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="(img, index) in bannerImage" :key="index">
-                <img :src="img.address" alt="" style="width: 100%; height: 100%;">
+            <div class="swiper-slide" v-for="(img, index) in bannerImage" :key="index" style="text-align: center">
+                <img :src="img.address" alt="" style="width: 100%; height: 100%;vertical-align: middle;">
             </div>
         </div>
         <!-- 分页器 -->
@@ -25,22 +25,15 @@
         methods: {
             initBanner() {
                 var mySwiper = new Swiper('.swiper-container', {
-                    speed: 1500,
-                    autoplay: {
-                        delay: 1500,
-                        disableOnInteraction: false,
-                        stopOnLastSlide: false,
-                    },
-                    // loop: true,
+                    speed: 3000,
+                    autoplay: 1500,
+                    autoplayStopOnLast: false,
+                    autoplayDisableOnInteraction: false,
                     effect: 'fade', // 切换效果
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    prevButton: '.swiper-button-prev',
+                    nextButton: '.swiper-button-next',
                     observer:true,
                     observeParents:true
                 })
@@ -59,6 +52,7 @@
     .swiper-container {
         width: 100%;
         height: 800px;
+        z-index: 1;
     }
     .swiper-container .banner_change_button {
         display: none;
@@ -70,6 +64,7 @@
         width: 100%;
         height: 30px;
         justify-content: center;
+        z-index: 3;
     }
     .swiper-container .swiper-pagination .swiper-pagination-bullet {
         width: 10px;

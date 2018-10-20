@@ -41,7 +41,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     .company_history {
         width: 100%;
     }

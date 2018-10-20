@@ -1,15 +1,15 @@
 .Index_page {
   width: 100%;
 }
-.index_container {
+.Index_page .index_container {
   width: 100%;
 }
-.index_container .index_news {
+.Index_page .index_container .index_news {
   width: 100%;
   height: 65px;
   position: relative;
 }
-.index_container .index_news .news_content {
+.Index_page .index_container .index_news .news_content {
   width: 100%;
   height: 65px;
   background-color: #f2f2f2;
@@ -17,7 +17,7 @@
   overflow: hidden;
   transition: all 0.5s;
 }
-.index_container .index_news .news_content i {
+.Index_page .index_container .index_news .news_content i {
   display: inline-block;
   width: 22px;
   height: 20px;
@@ -26,14 +26,14 @@
   top: 23px;
   left: 400px;
 }
-.index_container .index_news .news_content ul {
+.Index_page .index_container .index_news .news_content ul {
   width: 100%;
   height: 65px;
 }
-.index_container .index_news .news_content ul.anim {
+.Index_page .index_container .index_news .news_content ul.anim {
   transition: all 0.5s;
 }
-.index_container .index_news .news_content ul li {
+.Index_page .index_container .index_news .news_content ul li {
   width: 100%;
   height: 65px;
   padding-left: 450px;
@@ -42,15 +42,15 @@
   font-weight: bold;
   cursor: pointer;
 }
-.index_container .index_news .news_content ul li .news_link {
+.Index_page .index_container .index_news .news_content ul li .news_link {
   color: #2e2e57;
 }
-.index_container .index_news .news_content ul li .news_link span {
+.Index_page .index_container .index_news .news_content ul li .news_link span {
   margin-left: 20px;
   color: #6c6c6c;
   font-weight: normal;
 }
-.index_container .index_news .about_baho {
+.Index_page .index_container .index_news .about_baho {
   position: absolute;
   width: 742px;
   height: 65px;
@@ -58,7 +58,7 @@
   top: 0;
   right: 0;
 }
-.index_container .index_news .about_baho .about_baho_text {
+.Index_page .index_container .index_news .about_baho .about_baho_text {
   font-size: 14px;
   color: #2e2e57;
   font-weight: bold;
@@ -67,25 +67,25 @@
   line-height: 65px;
   cursor: pointer;
 }
-.index_container .index_news .about_baho .about_baho_text:first-child {
+.Index_page .index_container .index_news .about_baho .about_baho_text:first-child {
   margin-left: 160px;
   margin-right: 50px;
 }
-.index_container .index_news .about_baho .about_baho_text:last-child {
+.Index_page .index_container .index_news .about_baho .about_baho_text:last-child {
   margin-left: 50px;
   position: relative;
 }
-.index_container .index_news .about_baho .about_baho_text:last-child .code_content {
+.Index_page .index_container .index_news .about_baho .about_baho_text:last-child .code_content {
   width: 138px;
   height: 125px;
   display: block;
-  background-image: url(../../../../static/img/code.png);
+  background-image: url(../../../../static/img/code.jpg);
   position: absolute;
   top: -32px;
   left: 65px;
   z-index: 2;
   display: none;
 }
-.index_container .index_news .about_baho .about_baho_text:last-child:hover .code_content {
+.Index_page .index_container .index_news .about_baho .about_baho_text:last-child:hover .code_content {
   display: block;
 }

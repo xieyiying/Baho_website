@@ -7,10 +7,10 @@
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .about_content .content_container {
   width: 1150px;
-  height: 657px;
   margin: 0 auto;
 }
 .about_content .content_container .content_left {
@@ -31,8 +31,7 @@
 .about_content .content_container .content_left .title span:first-child {
   float: left;
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 277px;
+  width: 350px;
   height: 118px;
 }
 .about_content .content_container .content_left .title span:last-child {
@@ -55,10 +54,6 @@
 .about_content .content_container .content_left .text p {
   text-indent: 2em;
   line-height: 25px;
-  margin-bottom: 10px;
-}
-.about_content .content_container .content_left .text div {
-  width: 100%;
 }
 .about_content .content_container .content_right {
   width: 313px;

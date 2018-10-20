@@ -6,98 +6,51 @@
                 <div id="container"></div>
             </div>
             <!-- 联系内容 -->
-            <template v-if="language == 'zh'">
-                <div class="contact_info">
-                    <div class="contact_info_left">
-                        <ul class="info_detial">
-                            <li>
-                                <i class="contact_icon contact_icon_dh"></i>
-                                <p class="contact_text">
-                                    <span>联系方式：</span>
-                                    <span>400-967-8655</span>
-                                </p>
-                            </li>
-                            <li>
-                                <i class="contact_icon contact_icon_dz"></i>
-                                <p class="contact_text">
-                                    <span>公司地址：</span>
-                                    <span>杭州市滨江区江陵路88号万轮科技园5号楼</span>
-                                </p>
-                            </li>
-                            <li>
-                                <i class="contact_icon contact_icon_yx"></i>
-                                <p class="contact_text">
-                                    <span>公司邮箱：</span>
-                                    <span>bahogroup@baho.cn</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="contact_info_right">
-                        <ul>
-                            <li>
-                                <a href="https://weibo.com/bahokids?is_hot=1" target="_blank">
-                                    <i></i>
-                                    官方微博
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i></i>
-                                    扫码关注
-                                    <span class="code"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="contact_info">
+                <div class="contact_info_left">
+                    <ul class="info_detial">
+                        <li>
+                            <i class="contact_icon contact_icon_dh"></i>
+                            <p class="contact_text">
+                                <span>{{language == 'zh' ? '联系方式' : 'Contact Information'}}：</span>
+                                <span>400-967-8655</span>
+                            </p>
+                        </li>
+                        <li>
+                            <i class="contact_icon contact_icon_dz"></i>
+                            <p class="contact_text">
+                                <span>{{language == 'zh' ? '公司地址': 'Company Address'}}：</span>
+                                <span>{{language == 'zh' ? '杭州市滨江区江陵路88号万轮科技园5号楼': 'Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang'}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <i class="contact_icon contact_icon_yx"></i>
+                            <p class="contact_text">
+                                <span>{{language == 'zh' ? '公司邮箱' : 'Email'}}：</span>
+                                <span>bahogroup@baho.cn</span>
+                            </p>
+                        </li>
+                    </ul>
                 </div>
-            </template>
-            <template v-else>
-                <div class="contact_info">
-                    <div class="contact_info_left">
-                        <ul class="info_detial">
-                            <li>
-                                <i class="contact_icon contact_icon_dh"></i>
-                                <p class="contact_text">
-                                    <span>Contact Information：</span>
-                                    <span>400-967-8655</span>
-                                </p>
-                            </li>
-                            <li>
-                                <i class="contact_icon contact_icon_dz"></i>
-                                <p class="contact_text">
-                                    <span>Company Address：</span>
-                                    <span>Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang</span>
-                                </p>
-                            </li>
-                            <li>
-                                <i class="contact_icon contact_icon_yx"></i>
-                                <p class="contact_text">
-                                    <span>Email：</span>
-                                    <span>bahogroup@baho.cn</span>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="contact_info_right">
-                        <ul>
-                            <li>
-                                <a href="https://weibo.com/bahokids?is_hot=1" target="_blank">
-                                    <i></i>
-                                    Weibo
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i></i>
-                                    QR Code
-                                    <span class="code"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="contact_info_right">
+                    <ul>
+                        <li>
+                            <a href="https://weibo.com/bahokids?is_hot=1" target="_blank">
+                                <i></i>
+                                {{language == 'zh' ? '官方微博' : 'Weibo'}}
+                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <i></i>
+                                {{language == 'zh' ? '扫码关注' : 'QR Code'}}
+                                <span class="code"></span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </template>
+            </div>
         </div>
         <div class="bottom_soild">
             <div class="left_soild"></div>
@@ -111,7 +64,7 @@
         data() {
             return {
                 language: 'zh',
-                addressText: '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>'
+                addressText: ''
             }
         },
         methods: {
@@ -140,10 +93,17 @@
         },
         mounted () {
             this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
-            this.handleMap('zh_cn', this.addressText)
+            if(this.language == 'zh') {
+                this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>'
+                this.handleMap('zh_cn', this.addressText)
+            } else if(this.language == 'en') {
+                this.addressText = '<div> <p style="font-size:10px">Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang</p></div>'
+                this.handleMap('en', this.addressText)
+            }
             this.$Bus.$on('changeLanguage', language => {
                 this.language = language
                 if(language == 'zh') {
+                    this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>'
                     this.handleMap('zh_cn', this.addressText)
                 } else if(language == 'en') {
                     this.addressText = '<div> <p style="font-size:10px">Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang</p></div>'
@@ -153,7 +113,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     @import '../../../assets/less/JoinBaho/ContactUs/ContactUs.css';
 </style>
 <style>

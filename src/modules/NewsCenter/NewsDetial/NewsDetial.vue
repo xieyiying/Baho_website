@@ -42,7 +42,7 @@
         }
     }
 </script>
-<style scoped>
+<style>
     .news_detial {
         width: 100%;
     }
@@ -72,6 +72,9 @@
 <style>
     .news_detial_content .new_content p {
         margin-bottom: 10px;
+    }
+    .news_detial_content .new_content p img{
+        max-width: 100%;
     }
 </style>
 
