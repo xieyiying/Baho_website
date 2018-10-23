@@ -3,7 +3,9 @@
         <div class="news_detial_content">
             <h2 class="title">{{newsTitle}}</h2>
             <p class="new_date">{{language == 'zh' ? '发布时间' : 'Release time'}}：<span>{{newsDate}}</span></p>
-            <div class="new_content" v-html="newsContent"></div>
+            <div class="new_content">
+                <div class="ql-editor" v-html="newsContent"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -70,11 +72,20 @@
     }
 </style>
 <style>
-    .news_detial_content .new_content p {
-        margin-bottom: 10px;
+    .news_detial_content .new_content {
+        width: 820px;
+        margin: 0 auto;
+        text-align: left;
     }
-    .news_detial_content .new_content p img{
+
+    .news_detial_content .new_content p {
+        line-height: 25px;
+    }
+    .news_detial_content .new_content img{
         max-width: 100%;
+    }
+    .news_detial_content .new_content .ql-align-center {
+        text-align: center;
     }
 </style>
 
