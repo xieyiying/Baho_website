@@ -1,7 +1,7 @@
 <template>
     <div class="sub_brands" :style="{backgroundImage: 'url(' + brandBackground + ')'}">
         <div class="sub_brands_content">
-            <h2>{{brandTitle}}</h2>
+            <h2 v-html="brandTitle"></h2>
             <span :style="{backgroundImage: 'url(' + brandLogo + ')'}"></span>
             <p v-html="brandContent"></p>
             <a :href="url" target="_blank">{{language == 'zh' ? '了解更多' : 'Learn More'}}</a>

@@ -1,7 +1,7 @@
 <template>
     <div class="brands_center">
         <div class="brands_center_container">
-            <h1>{{brandTitle}}</h1>
+            <h1 v-html="brandTitle"></h1>
             <p v-html="brandContent"></p>
         </div>
         <div class="brands_logo" :style="{backgroundImage: 'url(' + brandBgImg +')'}">
