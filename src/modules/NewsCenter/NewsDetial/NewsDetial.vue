@@ -10,6 +10,7 @@
     </div>
 </template>
 <script>
+    import { GetNewsDetialData } from '@/utils/https'
     export default {
         name: 'NewsDetial',
         data() {
@@ -23,7 +24,15 @@
         },
         methods: {
             getNewsDetial(id, language) {
-                this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/getInfo', {
+                // this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/getInfo', {
+                //     id: id,
+                //     languageType: language
+                // }, res => {
+                //     this.newsTitle = res.body.bahoNews.title
+                //     this.newsDate = res.body.bahoNews.updateDate
+                //     this.newsContent = res.body.bahoNews.content
+                // })
+                GetNewsDetialData({
                     id: id,
                     languageType: language
                 }, res => {
@@ -39,7 +48,8 @@
             this.getNewsDetial(this.newsId, this.language)
             this.$Bus.$on('changeLanguage', language => {
                 this.language = language
-                this.getNewsDetial(this.newsId, language)
+                this.$router.push({name: 'news'})
+                // this.getNewsDetial(this.newsId, language)
             })
         }
     }

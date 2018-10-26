@@ -10,6 +10,7 @@
     </div>
 </template>
 <script>
+    import { GetAboutBahoData } from '@/utils/https'
     export default {
         name: 'history',
         data() {
@@ -22,7 +23,13 @@
         methods: {
             getData(language) {
                 this.aboutChildType = this.$route.params.type
-                this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatAbout/getWebNetAboutInfo', {
+                // this.$utils.Get('page/bahoweb/navigat/bahoNavigatAbout/getWebNetAboutInfo', {
+                //     type: this.aboutChildType,
+                //     languageType: language
+                // }, res => {
+                //     this.addrMasterMap = res[0].addrMasterMap
+                // })
+                GetAboutBahoData({
                     type: this.aboutChildType,
                     languageType: language
                 }, res => {

@@ -14,6 +14,7 @@
     </div>
 </template>
 <script>
+    import { GetInvestorData } from '@/utils/https'
     export default {
         name: 'Partner',
         data() {
@@ -28,7 +29,15 @@
         methods: {
             getData(language) {
                 this.investorType = this.$route.params.type
-                this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatInvestor/getWebNetInvestorInfo', {
+                // this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatInvestor/getWebNetInvestorInfo', {
+                //     type: this.investorType,
+                //     languageType: language
+                // }, res => {
+                //     this.investorPhotoOne = res[0].investorPhotoOne
+                //     this.investorPhotoTwo = res[0].investorPhotoTwo
+                //     this.investorPhotoThree = res[0].investorPhotoThree
+                // })
+                GetInvestorData({
                     type: this.investorType,
                     languageType: language
                 }, res => {

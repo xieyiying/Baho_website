@@ -44,13 +44,7 @@
         },
         methods: {
             changeActive(name, isActive) {
-                // if(name == 'brand') {
-                //     this.$router.push({name: name, params: {type: 0}});
-                // } else {
-                //     this.$router.push({name: name});
-                // }
                 this.$router.push({name: name});
-                
                 this.$Bus.$emit('newActive', isActive)
             },
         },

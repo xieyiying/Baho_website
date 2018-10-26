@@ -11,7 +11,8 @@
     </div>
 </template>
 <script>
-    import v_banner from '../../../components/Banner/Banner.vue'
+    import v_banner from '@/components/Banner/Banner.vue'
+    import { GetActivityData } from '@/utils/https'
     export default {
         name: 'activity',
         components: {
@@ -25,7 +26,13 @@
         },
         methods: {
             getActivityBanner(language) {
-                this.$utils.Get('bhgw/page/bahoweb/roll/bahoRollPic/getRollByType', {
+                // this.$utils.Get('bhgw/page/bahoweb/roll/bahoRollPic/getRollByType', {
+                //     type: 1,
+                //     languageType: language
+                // }, res => {
+                //     this.bannerImage = res
+                // })
+                GetActivityData({
                     type: 1,
                     languageType: language
                 }, res => {

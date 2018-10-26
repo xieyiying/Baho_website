@@ -30,7 +30,8 @@
     </div>
 </template>
 <script>
-    import v_banner from '../../components/Banner/Banner.vue'
+    import v_banner from '@/components/Banner/Banner.vue'
+    import { GetIndexNewsData, GetIndexBannerData } from '@/utils/https'
     export default {
         name: 'home',
         components: {
@@ -61,7 +62,13 @@
             },
             // 获取轮播图数据
             getBannerData(language) {
-                this.$utils.Get('bhgw/page/bahoweb/roll/bahoRollPic/getRollByType', {
+                // this.$utils.Get('bhgw/page/bahoweb/roll/bahoRollPic/getRollByType', {
+                //     type: 0,
+                //     languageType: language
+                // }, res => {
+                //     this.bannerImage = res
+                // })
+                GetIndexBannerData({
                     type: 0,
                     languageType: language
                 }, res => {
@@ -70,7 +77,12 @@
             },
             // 获取新闻数据
             getNewsData(language) {
-                this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/listNews', {
+                // this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/listNews', {
+                //     languageType: language
+                // }, res => {
+                //     this.newsData = res.body.list
+                // })
+                GetIndexNewsData({
                     languageType: language
                 }, res => {
                     this.newsData = res.body.list

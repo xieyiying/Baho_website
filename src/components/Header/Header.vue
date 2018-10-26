@@ -33,7 +33,7 @@
     </div>
 </template>
 <script>
-
+    import { GetNavData } from '@/utils/https'
     export default {
         name: "Header",
         data() {
@@ -55,7 +55,12 @@
             },
             // 获取导航数据
             getNavData(language) {
-                this.$utils.Get('bhgw/page/bahoweb/menu/bahoMenu/getMenuList', {
+                // this.$utils.Get('page/bahoweb/menu/bahoMenu/getMenuList', {
+                //     languageType: language
+                // }, res => {
+                //     this.navData = res
+                // })
+                GetNavData({
                     languageType: language
                 }, res => {
                     this.navData = res

@@ -10,6 +10,7 @@
     </div>
 </template>
 <script>
+    import { GetHeartSoundData } from '@/utils/https'
     export default {
         name: 'HeartSound',
         data() {
@@ -21,7 +22,21 @@
         },
         methods: {
             getVideoData(language) {
-                this.$utils.Get('bhgw/page/bahoweb/video/bahoVideo/webInfoList', {
+                // this.$utils.Get('bhgw/page/bahoweb/video/bahoVideo/webInfoList', {
+                //     languageType: language
+                // }, res => {
+                //     this.videoUrl = res.body.list[0].videoUrl
+                //     this.videoHtml = `<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"       codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" height="609" width="960">
+                //                         <param name="quality" value="high">
+                //                         <param name="movie" value="${this.videoUrl}">
+                //                         <embed height="609" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="${this.videoUrl}" type="application/x-shockwave-flash" width="960">
+                //                         <!--[if lt IE9]> 
+                //                             <span>该浏览器不支持该标签，请使用IE11或谷歌等高版本浏览器</span>
+                //                         <![endif]-->
+                //                     </object>`
+                    
+                // })
+                GetHeartSoundData({
                     languageType: language
                 }, res => {
                     this.videoUrl = res.body.list[0].videoUrl
