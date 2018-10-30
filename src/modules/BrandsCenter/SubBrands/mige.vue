@@ -27,16 +27,6 @@
         },
         methods: {
             getSubBrandsData() {
-                // this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatBrand/getWebNetBrandInfo', {
-                //     type: 2,
-                //     languageType: this.language
-                // }, res => {
-                //     this.brandBackground = res[0].brandBackground
-                //     this.brandLogo = res[0].brandLogo
-                //     this.brandTitle = res[0].brandTitle
-                //     this.brandContent = res[0].brandContent
-                //     this.url = res[0].url
-                // })
                 GetBrandsCenterData({
                     type: 2,
                     languageType: this.language

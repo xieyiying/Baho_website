@@ -2,7 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 export default {
   // httpUrl: 'http://47.99.165.110:8068/',
-  httpUrl: 'http://www.baho.cn:8068/',
+  httpUrl: 'http://www.baho.cn/',
   // httpUrl: 'api/',
 
   Post (url, data, fn, next) {

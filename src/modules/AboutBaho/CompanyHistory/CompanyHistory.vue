@@ -23,12 +23,6 @@
         methods: {
             getData(language) {
                 this.aboutChildType = this.$route.params.type
-                // this.$utils.Get('page/bahoweb/navigat/bahoNavigatAbout/getWebNetAboutInfo', {
-                //     type: this.aboutChildType,
-                //     languageType: language
-                // }, res => {
-                //     this.addrMasterMap = res[0].addrMasterMap
-                // })
                 GetAboutBahoData({
                     type: this.aboutChildType,
                     languageType: language

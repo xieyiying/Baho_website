@@ -82,11 +82,6 @@
             },
             // 获取banner
             getBannerData(language) {
-                // this.$utils.Get('bhgw/page/bahoweb/recruit/bahoZhaopin/getRecruitPhoto', {
-                //     languageType: language
-                // }, res => {
-                //     this.path = res.path
-                // })
                 GetRecruitInfoBannerData({
                     languageType: language
                 }, res => {
@@ -95,13 +90,6 @@
             },
             // 获取招聘职位列表
             getInfoData(language) {
-                // this.$utils.Get('bhgw/page/bahoweb/recruit/bahoZhaopin/getRecruitName', {
-                //     languageType: language
-                // }, res => {
-                //     this.recruitData = res.body.list
-                //     this.detialId = res.body.list[0].id
-                //     this.getInfoDetialData(this.detialId, language)
-                // })
                 GetRecruitInfoList({
                     languageType: language
                 }, res => {
@@ -112,18 +100,6 @@
             },
             // 获取招聘职位详情
             getInfoDetialData(id, language) {
-                // this.$utils.Get('bhgw/page/bahoweb/recruit/bahoZhaopin/getRecruitByNameInfo', {
-                //     id: id,
-                //     languageType: language
-                // }, res => {
-                //     this.number = res.body.bahoZhaopin.number
-                //     this.workPlace = res.body.bahoZhaopin.workPlace
-                //     this.education = res.body.bahoZhaopin.education
-                //     this.salary = res.body.bahoZhaopin.salary
-                //     this.postDuties = res.body.bahoZhaopin.postDuties
-                //     this.requirements = res.body.bahoZhaopin.requirements
-                //     this.email = res.body.bahoZhaopin.email
-                // })
                 GetRecruitInfoListDetial({
                     id: id,
                     languageType: language

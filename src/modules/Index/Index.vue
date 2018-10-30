@@ -62,12 +62,6 @@
             },
             // 获取轮播图数据
             getBannerData(language) {
-                // this.$utils.Get('bhgw/page/bahoweb/roll/bahoRollPic/getRollByType', {
-                //     type: 0,
-                //     languageType: language
-                // }, res => {
-                //     this.bannerImage = res
-                // })
                 GetIndexBannerData({
                     type: 0,
                     languageType: language
@@ -77,11 +71,6 @@
             },
             // 获取新闻数据
             getNewsData(language) {
-                // this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/listNews', {
-                //     languageType: language
-                // }, res => {
-                //     this.newsData = res.body.list
-                // })
                 GetIndexNewsData({
                     languageType: language
                 }, res => {

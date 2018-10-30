@@ -71,12 +71,6 @@
         methods: {
             // 获取新闻列表
             getNewsData(language) {
-                // this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/webListNews', {
-                //     languageType: language
-                // }, res => {
-                //     this.topListNews = res.body.topList
-                //     this.bottomListNews = res.body.bottomList
-                // })
                 GetNewsCenterData({
                     languageType: language
                 }, res => {

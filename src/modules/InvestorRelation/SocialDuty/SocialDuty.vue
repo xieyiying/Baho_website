@@ -27,13 +27,6 @@
         methods: {
             getData(language) {
                 this.investorType = this.$route.params.type
-                // this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatInvestor/getWebNetInvestorInfo', {
-                //     type: this.investorType,
-                //     languageType: language
-                // }, res => {
-                //     this.investorPhotoOne = res[0].investorPhotoOne
-                //     this.investorContent = res[0].investorContent
-                // })
                 GetInvestorData({
                     type: this.investorType,
                     languageType: language

@@ -32,22 +32,6 @@
         },
         methods: {
             getBahoData() {
-                // this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatBrand/getWebNetBrandInfo', {
-                //     type: 4,
-                //     languageType: this.language
-                // }, res => {
-                //     this.brandLogo.push(
-                //         {name: 'kub', img: res[0].brandLogo},
-                //         {name: 'diai', img: res[0].brandLogo1},
-                //         {name: 'beihao', img: res[0].brandLogo2},
-                //         {name: 'mige', img: res[0].brandLogo3},
-                //         {name: 'maikeshi', img: res[0].brandLogo4},
-                        
-                //     )
-                //     this.brandTitle = res[0].brandTitle
-                //     this.brandContent = res[0].brandContent
-                //     this.brandBgImg = res[0].brandBackground
-                // })
                 GetBrandsCenterData({
                     type: 4,
                     languageType: this.language

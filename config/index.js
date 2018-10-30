@@ -17,8 +17,8 @@ module.exports = {
         // http://10.0.4.176:8080
           // target:'http://10.0.4.206:8080',
           // 47.99.165.110
-          target:'http://10.0.4.207:8080',
-          // target:'http://47.99.165.110:8068',
+          // target:'http://10.0.4.207:8081',
+          target:'http://47.99.165.110',
           changeOrigin:true,
           pathRewrite:{
               '^/api':'/'
@@ -32,7 +32,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

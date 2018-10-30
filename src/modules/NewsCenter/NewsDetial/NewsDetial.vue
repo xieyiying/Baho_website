@@ -24,14 +24,6 @@
         },
         methods: {
             getNewsDetial(id, language) {
-                // this.$utils.Get('bhgw/page/bahoweb/news/bahoNews/getInfo', {
-                //     id: id,
-                //     languageType: language
-                // }, res => {
-                //     this.newsTitle = res.body.bahoNews.title
-                //     this.newsDate = res.body.bahoNews.updateDate
-                //     this.newsContent = res.body.bahoNews.content
-                // })
                 GetNewsDetialData({
                     id: id,
                     languageType: language

@@ -43,20 +43,6 @@
         methods: {
             getAboutBahoDate() {
                 this.aboutChildType = this.$route.params.type
-                // this.$utils.Get('bhgw/page/bahoweb/navigat/bahoNavigatAbout/getWebNetAboutInfo', {
-                //     type: this.aboutChildType,
-                //     languageType: this.language
-                // }, res => {
-                //     this.addrMasterMap = res[0].addrMasterMap // 主图地址
-                //     this.addrLogo = res[0].addrLogo // logo
-                //     if('addrTitle' in res[0]) {
-                //         this.addrTitle = res[0].addrTitle // 标题图
-                //     }
-                //     this.addrSideOne = res[0].addrSideOne // 侧边图1
-                //     this.addrSideTwo = res[0].addrSideTwo // 侧边图2
-                //     this.addrSideThree = res[0].addrSideThree// 侧边图3
-                //     this.content = res[0].content // 文字解释
-                // })
                 GetAboutBahoData({
                     type: this.aboutChildType,
                     languageType: this.language
