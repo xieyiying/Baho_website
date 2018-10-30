@@ -2,7 +2,7 @@
     <div class="heart_sound">
         <div class="video_box">
             <div class="video_player">
-                <video src="http://47.99.165.110:8068/video/baho_video.mp4" controls="controls" autoplay poster="../../../../static/img/video.jpg"></video>
+                <video src="http://47.99.165.110:80/video/baho_video.mp4" controls="controls" autoplay poster="../../../../static/img/video.jpg"></video>
             </div>
         </div>
         <div class="bottom_soild">
@@ -57,7 +57,7 @@
     .video_box {
         width: 100%;
         height: 772px;
-        background-image: url(http://47.99.165.110:8068/photos/xinsheng.jpg);
+        background-image: url(http://47.99.165.110:80/photos/xinsheng.jpg);
         background-repeat: no-repeat;
         padding-top: 60px;
     }
