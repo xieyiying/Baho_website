@@ -136,6 +136,6 @@ export default new Router({
       path: '/ContactUs',
       name: 'contact',
       component: () => import('@/modules/JoinBaho/ContactUs/ContactUs.vue')
-    }
+    },
   ]
 })

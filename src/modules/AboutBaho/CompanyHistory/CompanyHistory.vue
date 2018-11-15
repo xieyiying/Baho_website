@@ -48,7 +48,7 @@
     }
     .company_history .history_img {
         width: 100%;
-        height: 1062px;
+        height: 800px;
     }
     .company_history .history_img img {
         width: 100%;
