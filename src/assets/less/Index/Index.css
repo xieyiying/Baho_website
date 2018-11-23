@@ -1,5 +1,6 @@
 .Index_page {
   width: 100%;
+  min-width: 1200px;
 }
 .Index_page .index_container {
   width: 100%;

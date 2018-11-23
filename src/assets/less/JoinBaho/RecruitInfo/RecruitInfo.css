@@ -1,5 +1,6 @@
 .recruit_info {
   width: 100%;
+  min-width: 1200px;
 }
 .recruit_info .recruit_info_content {
   width: 100%;

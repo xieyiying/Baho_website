@@ -1,19 +1,41 @@
 <template>
   <div id="app">
-    <v_header></v_header>
+    <div class="web_header">
+      <v_header v-if="device === 'pc'"></v_header>
+      <m_header v-else></m_header>
+    </div>
     <router-view/>
-    <v_footer></v_footer>
+    <div class="web_footer">
+      <v_footer v-if="device === 'pc'"></v_footer>
+      <p v-else>222</p>
+    </div>
   </div>
 </template>
 
 <script>
 import v_header from './components/Header/Header'
 import v_footer from './components/Footer/Footer'
+import m_header from './components/mHeader/mHeader'
 export default {
   name: 'App',
   components: {
     v_header,
-    v_footer
+    v_footer,
+    m_header
+  },
+  data() {
+    return {
+      device: 'pc'
+    }
+  },
+  methods: {
+    judgeDevice() {
+      if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        this.device = 'yd'
+      } else {
+        this.device = 'pc'
+      }
+    }
   },
   mounted(){
     // 关闭浏览器窗口的时候清空浏览器缓存在localStorage的数据
@@ -21,6 +43,9 @@ export default {
         var storage = window.localStorage;
         storage.clear()
     }
+  },
+  created() {
+    this.judgeDevice()
   }
 }
 </script>

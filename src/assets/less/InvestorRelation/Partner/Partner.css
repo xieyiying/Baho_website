@@ -1,5 +1,6 @@
 .partner {
   width: 100%;
+  min-width: 1200px;
 }
 .partner .partner_content {
   width: 100%;

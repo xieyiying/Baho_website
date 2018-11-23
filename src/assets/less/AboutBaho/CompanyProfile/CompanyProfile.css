@@ -1,5 +1,6 @@
 .about_content {
   width: 100%;
+  min-width: 1200px;
 }
 .about_content .about_banner {
   width: 100%;

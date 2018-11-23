@@ -1,5 +1,6 @@
 .brands_center {
   width: 100%;
+  min-width: 1200px;
 }
 .brands_center .brands_center_container {
   width: 1150px;

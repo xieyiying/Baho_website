@@ -6,13 +6,14 @@ import router from './router'
 import './assets/less/base.css'
 import Utils from './utils/utils'
 import axios from 'axios'
-import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import 'babel-polyfill'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-Vue.use(VueQuillEditor)
+Vue.use(ElementUI, { size: 'small' })
 
 Vue.config.productionTip = false
 Vue.prototype.$utils = Utils

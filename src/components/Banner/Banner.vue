@@ -90,6 +90,7 @@ export default {
 @import "swiper/dist/css/swiper.min.css";
 .swiper-container {
   width: 100%;
+  min-width: 1200px;
   height: 800px;
   z-index: 1;
 }

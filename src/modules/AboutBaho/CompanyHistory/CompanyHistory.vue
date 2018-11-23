@@ -45,6 +45,7 @@
 <style>
     .company_history {
         width: 100%;
+        min-width: 1200px;
     }
     .company_history .history_img {
         width: 100%;

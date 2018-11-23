@@ -49,6 +49,7 @@
 <style>
     .news_detial {
         width: 100%;
+        min-width: 1200px;
     }
     .news_detial_content {
         width: 1130px;

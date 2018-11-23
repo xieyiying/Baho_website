@@ -53,6 +53,7 @@
 <style>
     .heart_sound {
         width: 100%;
+        min-width: 1200px;
     }
     .video_box {
         width: 100%;
