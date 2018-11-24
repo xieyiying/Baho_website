@@ -7,9 +7,9 @@ const ydRouter = [ // 移动
   },
   // 首页
   {
-    path: '/test',
+    path: '/index',
     name: 'index',
-    component: () => import('@/mobile/test.vue')
+    component: () => import('@/mobile/index.vue')
   }
 ]
 

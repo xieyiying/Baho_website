@@ -4,7 +4,7 @@
             <div class="f_left logo">
                 <img src="../../assets/img/mobile/logo.png" alt="">
             </div>
-            <div class="nav_ul f_right" @click="showNav">
+            <div :class="['nav_ul', 'f_right', {anim: isShowNav === true}]" @click="showNav">
                 <img src="../../assets/img/mobile/logo.png" alt="" class="">
             </div>
         </div>
@@ -16,30 +16,40 @@
                             <template slot="title">
                                 <span slot="title">{{ item.title }}</span>
                             </template>
-                            <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">
+                            <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index" @click="changHash(subItem.index)">
                                 {{ subItem.title }}
                             </el-menu-item>
                         </el-submenu>
                     </template>
                     <template v-else>
-                        <el-menu-item :index="item.index" :key="item.index">
+                        <el-menu-item :index="item.index" :key="item.index" @click="changHash(item.index)">
                             <i :class="item.icon"></i><span slot="title">{{ item.title }}</span>
                         </el-menu-item>
                     </template>
                 </template>
                 <template>
-                    <el-submenu key="immediately" index="immediately">
+                    <el-submenu key="immediately" index="test">
                         <template slot="title">
                             <span slot="title">马上联系</span>
                         </template>
-                        <el-menu-item key="hotline" index="hotline">
-                            贝豪热线
+                        <el-menu-item key="hotline" index="test">
+                            <span class="f_left">贝豪热线</span>
+                            <span class="f_right">
+                                <a href="tel:0579-00000000">0579-00000000</a>
+                            </span>
                         </el-menu-item>
-                        <el-menu-item key="email" index="email">
-                            贝豪邮箱
+                        <el-menu-item key="email" index="test">
+                            <span class="f_left">贝豪邮箱</span>
+                            <span class="f_right">0579-00000000</span>
                         </el-menu-item>
-                        <el-menu-item key="other" index="other">
-                            其他联系方式
+                        <el-menu-item key="other" index="test">
+                            <span class="f_left">其他联系方式</span>
+                            <span class="f_right contact_icon">
+                                <a href="javascript:;" class="wx_icon" @click="showWXcode">
+                                    <img v-show="isShowCode" src="../../assets/img/mobile/code.jpg">
+                                </a>
+                                <a href="javascript:;" class="wb_icon"></a>
+                            </span>
                         </el-menu-item>
                     </el-submenu>
                 </template>
@@ -49,76 +59,38 @@
 </template>
 <script>
     export default {
-        name: 'nav_header',
+        name: 'nav_header', 
         data() {
             return {
-                isShowNav: false,
+                isShowNav: false, // 是否显示导航
+                isShowCode: false, // 是否显示微信二维码
+                codeFlag: true,
                 clickFlag: true,
                 collapse: false,
                 items: [
                     {
-                        index: '/test#index',
+                        index: '#index',
                         title: '首页'
                     },
                     {
-                        index: '/test#about',
+                        index: '#about',
                         title: '关于贝豪',
                     },
                     {
-                        index: '/test#brand',
+                        index: '#brand',
                         title: '品牌中心',
-                        subs: [
-                            {
-                                index: 'kub',
-                                title: '可优比'
-                            },
-                            {
-                                index: 'diai',
-                                title: '蒂爱'
-                            },
-                            {
-                                index: 'baho',
-                                title: '贝豪优选'
-                            },
-                            {
-                                index: 'mige',
-                                title: '米歌'
-                            },
-                            {
-                                index: 'maikeshi',
-                                title: '麦可适  '
-                            },
-                        ]
                     },
                     {
-                        index: '/test#news',
+                        index: '#news',
                         title: '新闻中心',
                     },
                     {
-                        index: '/test#relation',
+                        index: '#relation',
                         title: '投资者关系',
                     },
                     {
-                        index: 'joinBaho',
+                        index: '#joinBaho',
                         title: '加入贝豪',
-                        subs: [
-                            {
-                                index: 'activity',
-                                title: '员工活动'
-                            },
-                            {
-                                index: 'heard',
-                                title: '员工心声'
-                            },
-                            {
-                                index: 'recruitInfo',
-                                title: '招聘信息'
-                            },
-                            {
-                                index: 'contact',
-                                title: '联系我们'
-                            },
-                        ]
                     },
                 ]
             }
@@ -133,7 +105,26 @@
                     this.isShowNav = false
                     this.clickFlag = true
                 }
-                
+            },
+            // 是否显示微信二维码
+            showWXcode() {
+                if(this.codeFlag) {
+                    this.isShowCode = true
+                    this.codeFlag = false
+                } else {
+                    this.isShowCode = false
+                    this.codeFlag = true
+                }
+            },
+            // hash跳转
+            changHash(id) {
+                let hashId = document.querySelector(id)
+                let y = hashId.offsetTop
+                while(hashId = hashId.offsetParent) {
+                    y += hashId.offsetTop
+                }
+                y -= 48
+                window.scrollTo(0, y)
             }
         },
         computed:{

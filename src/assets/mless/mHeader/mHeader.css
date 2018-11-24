@@ -3,6 +3,7 @@
   height: 3rem;
   background-color: #fff;
   position: fixed;
+  top: 0;
   border-bottom: 1px solid #e9e8e5;
 }
 .nav_header .nav {
@@ -10,7 +11,7 @@
   height: 100%;
 }
 .nav_header .nav .logo {
-  width: 0.92rem;
+  width: 1.5rem;
   height: 1.32rem;
   margin-top: 1rem;
   margin-left: 0.62rem;
@@ -27,6 +28,17 @@
   width: 1rem;
   height: 0.8rem;
 }
+.nav_header .nav .nav_ul.anim {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* Firefox */
+  -webkit-transform: rotate(90deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(90deg);
+  /* Opera */
+}
 .nav_header .nav_box {
   position: absolute;
   right: 0;
@@ -38,6 +50,9 @@
 }
 .nav_header .nav_box .el-menu {
   background-color: #f1f1f1;
+}
+.nav_header .nav_box .el-menu .el-menu-item * {
+  vertical-align: baseline!important;
 }
 .nav_header .nav_box .el-menu li {
   border-bottom: 1px solid #cfcfcf;
@@ -57,4 +72,32 @@
 }
 .nav_header .nav_box .el-menu li .el-submenu__title:hover {
   background: rgba(241, 241, 241, 0);
+}
+.nav_header .nav_box .el-menu li .contact_icon {
+  height: 100%;
+  position: relative;
+}
+.nav_header .nav_box .el-menu li .contact_icon a {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10px;
+}
+.nav_header .nav_box .el-menu li .contact_icon a.wx_icon {
+  background-image: url(../../img/mobile/next.png);
+  right: 50px;
+}
+.nav_header .nav_box .el-menu li .contact_icon a.wx_icon img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -85px;
+  left: -20px;
+}
+.nav_header .nav_box .el-menu li .contact_icon a.wb_icon {
+  background-image: url(../../img/mobile/next.png);
+  right: 0;
 }

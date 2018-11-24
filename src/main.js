@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import './assets/less/base.css'
+import './assets/base.css'
 import Utils from './utils/utils'
 import axios from 'axios'
 import 'quill/dist/quill.core.css'

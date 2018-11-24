@@ -7,7 +7,7 @@
     <router-view/>
     <div class="web_footer">
       <v_footer v-if="device === 'pc'"></v_footer>
-      <p v-else>222</p>
+      <m_footer v-else></m_footer>
     </div>
   </div>
 </template>
@@ -16,12 +16,14 @@
 import v_header from './components/Header/Header'
 import v_footer from './components/Footer/Footer'
 import m_header from './components/mHeader/mHeader'
+import m_footer from './components/mFooter/mFooter'
 export default {
   name: 'App',
   components: {
     v_header,
     v_footer,
-    m_header
+    m_header,
+    m_footer
   },
   data() {
     return {
