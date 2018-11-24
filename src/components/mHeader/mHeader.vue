@@ -52,21 +52,20 @@
         name: 'nav_header',
         data() {
             return {
-                // activeName: '',
                 isShowNav: false,
                 clickFlag: true,
                 collapse: false,
                 items: [
                     {
-                        index: 'index',
+                        index: '/test#index',
                         title: '首页'
                     },
                     {
-                        index: 'aboutBaho',
+                        index: '/test#about',
                         title: '关于贝豪',
                     },
                     {
-                        index: 'brandCenter',
+                        index: '/test#brand',
                         title: '品牌中心',
                         subs: [
                             {
@@ -92,11 +91,11 @@
                         ]
                     },
                     {
-                        index: 'newsCenter',
+                        index: '/test#news',
                         title: '新闻中心',
                     },
                     {
-                        index: 'investorRelation',
+                        index: '/test#relation',
                         title: '投资者关系',
                     },
                     {
