@@ -1,7 +1,199 @@
 .mobile {
     width: 100%;
+    // 首页
     .index {
         width: 100%;
-        
+        .yindex_content {
+            width: 100%;
+            height: 60/100rem;
+            line-height: 60/100rem;
+            .yd_news {
+                width: 55%;
+                height: 100%;
+                background-color: #f2f2f2;
+                overflow: hidden;
+                transition: all 0.5s;
+                .news_laba {
+                    display: inline-block;
+                    width: 28/100rem;
+                    height: 22/100rem;
+                    background-image: url(../../img/mobile/laba.png);
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    margin-top: 20/100rem;
+                    margin-left: 43/100rem;
+                }
+                ul {
+                    width: 76%;
+                    height: 60/100rem;
+                    padding-left: 17/100rem;
+                    &.anim{
+                        transition: all 0.5s;
+                    }
+                    li {
+                        width: 100%;
+                        height: 60/100rem;
+                        line-height: 60/100rem;
+                        cursor: pointer;
+                        .news_title {
+                            width: 170/100rem;
+                            display: inline-block;
+                            font-size: 12px;
+                            color: #3c3c3c;
+                            font-weight: bold;
+                        }
+                        .news_date {
+                            display: inline-block;
+                            font-size: 14/100rem;
+                            color: #7d7d7d;
+                            margin-left: 10/100rem;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+            .yd_contact {
+                width: 45%;
+                height: 100%;
+                background-color: #e2e2e2;
+                font-size: 18/100rem;
+                color: #3c3c3c;
+                font-weight: bold;
+                position: relative;
+                span {
+                    margin-left: 25/100rem;
+                    &:first-child {
+                        margin-left: 40/100rem;
+                        margin-right: 25/100rem;
+                    }
+                }
+                img {
+                    width: 150/100rem;
+                    height: 150/100rem;
+                    position: absolute;
+                    bottom: 70/100rem;
+                    left: 180/100rem;
+                    z-index: 9;
+                }
+            }
+        }
+    }
+    // 关于贝豪
+    .about {
+        width: 100%;
+        background-color: #fff;
+        .yd_about_baho {
+            width: 100%;
+            background-image: url(../../img/mobile/baho.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            text-align: center;
+            .about_tab {
+                padding: 0 10/100rem;
+                li {
+                    width: 25%;
+                    height: 75/100rem;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #3c3c3c;
+                    font-weight: bold;
+                    border-bottom: 5px solid #e2e2e2;
+                    position: relative;
+                    &.active {
+                        color: #103869;
+                        border-bottom-color: #103869;
+                        &::after {
+                            content: "";
+                            width: 26/100rem;
+                            height: 15/100rem;
+                            position: absolute;
+                            background-image: url(../../img/mobile/active_tab.png);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            bottom: 0;
+                            left: 50%;
+                            margin-left: -6%;
+                        }
+                    }
+                }
+            }
+            .tab_content {
+                padding: 0 10/100rem;
+                img {
+                    width: 100%;
+                    height: 303/100rem;
+                    margin-top: 37/100rem;
+                    vertical-align: bottom;
+                }
+                .detial_content {
+                    width: 100%;
+                    padding-bottom: 30/100rem;
+                    background-color: #f1f1f1;
+                    h2 {
+                        font-size: 16px;
+                        padding: 30/100rem 0;
+                    }
+                    p {
+                        padding: 0 30/100rem;
+                        text-align: left;
+                        font-size: 14px;
+                        line-height: 40/100rem;
+                    }
+                }
+            }
+        }
+    }
+    // 品牌中心
+    .brand_center {
+        margin-top: 86/100rem;
+        height: 894/100rem;
+        background-image: url(../../img/mobile/brand_bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        text-align: center;
+        padding: 0 46/100rem;
+        h3 {
+            margin-bottom: 46/100rem;
+        }
+        p {
+            font-size: 14px;
+            text-align: left;
+        }
+        .brands_logo {
+            position: relative;
+            margin-top: 50/100rem;
+            span {
+                display: block;
+                position: absolute;
+                width: 180/100rem;
+                height: 180/100rem;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                &.kub_logo {
+                    background-image: url(../../img/mobile/brand_logo.png);
+                    left: 35/100rem;
+                }
+                &.diai_logo {
+                    background-image: url(../../img/mobile/brand_logo.png);
+                    right: 35/100rem;
+                }
+                &.baho_logo {
+                    background-image: url(../../img/mobile/brand_logo.png);
+                    left: 50%;
+                    margin-left: -90/100rem;
+                    top: 125/100rem;
+                }
+                &.mige_logo {
+                    background-image: url(../../img/mobile/brand_logo.png);
+                    left: 35/100rem;
+                    top: 250/100rem;
+                }
+                &.maikeshi_logo {
+                    background-image: url(../../img/mobile/brand_logo.png);
+                    right: 35/100rem;
+                    top: 250/100rem;
+                }
+            }
+        }
     }
 }

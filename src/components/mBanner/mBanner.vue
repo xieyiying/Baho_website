@@ -18,7 +18,7 @@ export default {
   },
   data() {
       return {
-          boxHeight: 14,
+          boxHeight: 4.7,
       }
   },
   methods: {
@@ -48,7 +48,7 @@ export default {
 @import "swiper/dist/css/swiper.min.css";
 .swiper-container {
   width: 100%;
-  height: 14rem;
+  height: 4.7rem;
   z-index: 1;
 }
 .swiper-container .swiper-wrapper .swiper-slide {

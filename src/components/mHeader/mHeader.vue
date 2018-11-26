@@ -5,7 +5,7 @@
                 <img src="../../assets/img/mobile/logo.png" alt="">
             </div>
             <div :class="['nav_ul', 'f_right', {anim: isShowNav === true}]" @click="showNav">
-                <img src="../../assets/img/mobile/logo.png" alt="" class="">
+                <!-- <img src="../../assets/img/mobile/logo.png" alt="" class=""> -->
             </div>
         </div>
         <div class="nav_box" v-show="isShowNav">
@@ -64,8 +64,6 @@
             return {
                 isShowNav: false, // 是否显示导航
                 isShowCode: false, // 是否显示微信二维码
-                codeFlag: true,
-                clickFlag: true,
                 collapse: false,
                 items: [
                     {
@@ -98,23 +96,11 @@
         methods: {
             // 是否显示导航
             showNav() {
-                if(this.clickFlag) {
-                    this.isShowNav = true
-                    this.clickFlag = false
-                } else {
-                    this.isShowNav = false
-                    this.clickFlag = true
-                }
+                this.isShowNav = !this.isShowNav
             },
             // 是否显示微信二维码
             showWXcode() {
-                if(this.codeFlag) {
-                    this.isShowCode = true
-                    this.codeFlag = false
-                } else {
-                    this.isShowCode = false
-                    this.codeFlag = true
-                }
+                this.isShowCode = !this.isShowCode
             },
             // hash跳转
             changHash(id) {
@@ -123,8 +109,9 @@
                 while(hashId = hashId.offsetParent) {
                     y += hashId.offsetTop
                 }
-                y -= 48
+                y -= 65
                 window.scrollTo(0, y)
+                this.isShowNav = false
             }
         },
         computed:{

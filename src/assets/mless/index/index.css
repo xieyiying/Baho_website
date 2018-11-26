@@ -4,3 +4,193 @@
 .mobile .index {
   width: 100%;
 }
+.mobile .index .yindex_content {
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+}
+.mobile .index .yindex_content .yd_news {
+  width: 55%;
+  height: 100%;
+  background-color: #f2f2f2;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.mobile .index .yindex_content .yd_news .news_laba {
+  display: inline-block;
+  width: 0.28rem;
+  height: 0.22rem;
+  background-image: url(../../img/mobile/laba.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.2rem;
+  margin-left: 0.43rem;
+}
+.mobile .index .yindex_content .yd_news ul {
+  width: 76%;
+  height: 0.6rem;
+  padding-left: 0.17rem;
+}
+.mobile .index .yindex_content .yd_news ul.anim {
+  transition: all 0.5s;
+}
+.mobile .index .yindex_content .yd_news ul li {
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  cursor: pointer;
+}
+.mobile .index .yindex_content .yd_news ul li .news_title {
+  width: 1.7rem;
+  display: inline-block;
+  font-size: 12px;
+  color: #3c3c3c;
+  font-weight: bold;
+}
+.mobile .index .yindex_content .yd_news ul li .news_date {
+  display: inline-block;
+  font-size: 0.14rem;
+  color: #7d7d7d;
+  margin-left: 0.1rem;
+  overflow: hidden;
+}
+.mobile .index .yindex_content .yd_contact {
+  width: 45%;
+  height: 100%;
+  background-color: #e2e2e2;
+  font-size: 0.18rem;
+  color: #3c3c3c;
+  font-weight: bold;
+  position: relative;
+}
+.mobile .index .yindex_content .yd_contact span {
+  margin-left: 0.25rem;
+}
+.mobile .index .yindex_content .yd_contact span:first-child {
+  margin-left: 0.4rem;
+  margin-right: 0.25rem;
+}
+.mobile .index .yindex_content .yd_contact img {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 0.7rem;
+  left: 1.8rem;
+  z-index: 9;
+}
+.mobile .about {
+  width: 100%;
+  background-color: #fff;
+}
+.mobile .about .yd_about_baho {
+  width: 100%;
+  background-image: url(../../img/mobile/baho.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+}
+.mobile .about .yd_about_baho .about_tab {
+  padding: 0 0.1rem;
+}
+.mobile .about .yd_about_baho .about_tab li {
+  width: 25%;
+  height: 0.75rem;
+  text-align: center;
+  font-size: 16px;
+  color: #3c3c3c;
+  font-weight: bold;
+  border-bottom: 5px solid #e2e2e2;
+  position: relative;
+}
+.mobile .about .yd_about_baho .about_tab li.active {
+  color: #103869;
+  border-bottom-color: #103869;
+}
+.mobile .about .yd_about_baho .about_tab li.active::after {
+  content: "";
+  width: 0.26rem;
+  height: 0.15rem;
+  position: absolute;
+  background-image: url(../../img/mobile/active_tab.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6%;
+}
+.mobile .about .yd_about_baho .tab_content {
+  padding: 0 0.1rem;
+}
+.mobile .about .yd_about_baho .tab_content img {
+  width: 100%;
+  height: 3.03rem;
+  margin-top: 0.37rem;
+  vertical-align: bottom;
+}
+.mobile .about .yd_about_baho .tab_content .detial_content {
+  width: 100%;
+  padding-bottom: 0.3rem;
+  background-color: #f1f1f1;
+}
+.mobile .about .yd_about_baho .tab_content .detial_content h2 {
+  font-size: 16px;
+  padding: 0.3rem 0;
+}
+.mobile .about .yd_about_baho .tab_content .detial_content p {
+  padding: 0 0.3rem;
+  text-align: left;
+  font-size: 14px;
+  line-height: 0.4rem;
+}
+.mobile .brand_center {
+  margin-top: 0.86rem;
+  height: 8.94rem;
+  background-image: url(../../img/mobile/brand_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  padding: 0 0.46rem;
+}
+.mobile .brand_center h3 {
+  margin-bottom: 0.46rem;
+}
+.mobile .brand_center p {
+  font-size: 14px;
+  text-align: left;
+}
+.mobile .brand_center .brands_logo {
+  position: relative;
+  margin-top: 0.5rem;
+}
+.mobile .brand_center .brands_logo span {
+  display: block;
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.mobile .brand_center .brands_logo span.kub_logo {
+  background-image: url(../../img/mobile/brand_logo.png);
+  left: 0.35rem;
+}
+.mobile .brand_center .brands_logo span.diai_logo {
+  background-image: url(../../img/mobile/brand_logo.png);
+  right: 0.35rem;
+}
+.mobile .brand_center .brands_logo span.baho_logo {
+  background-image: url(../../img/mobile/brand_logo.png);
+  left: 50%;
+  margin-left: -0.9rem;
+  top: 1.25rem;
+}
+.mobile .brand_center .brands_logo span.mige_logo {
+  background-image: url(../../img/mobile/brand_logo.png);
+  left: 0.35rem;
+  top: 2.5rem;
+}
+.mobile .brand_center .brands_logo span.maikeshi_logo {
+  background-image: url(../../img/mobile/brand_logo.png);
+  right: 0.35rem;
+  top: 2.5rem;
+}
