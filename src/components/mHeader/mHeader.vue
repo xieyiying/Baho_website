@@ -4,9 +4,7 @@
             <div class="f_left logo">
                 <img src="../../assets/img/mobile/logo.png" alt="">
             </div>
-            <div :class="['nav_ul', 'f_right', {anim: isShowNav === true}]" @click="showNav">
-                <!-- <img src="../../assets/img/mobile/logo.png" alt="" class=""> -->
-            </div>
+            <div :class="['nav_ul', 'f_right', {anim: isShowNav === true}]" @click="showNav"></div>
         </div>
         <div class="nav_box" v-show="isShowNav">
             <el-menu class="sidebar-el-menu" :default-active="onRoutes" :collapse="collapse" active-text-color="#0d386b" unique-opened router text-color="#3c3c3c">

@@ -8,6 +8,7 @@ body {
   height: 100%;
   font-size: 0.14rem;
   font-family: 'Microsoft Yahei' !important;
+  color: #3c3c3c;
 }
 /* 禁用iPhone中Safari的字号自动调整 */
 /* html { 
@@ -75,11 +76,11 @@ body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, d
 }
 .h1_style {
   padding: 0.84rem 0 0.28rem 0;
-  font-size: 22px;
+  font-size: 0.44rem;
   color: #3c3c3c;
 }
 .h3_style {
-  font-size: 14px;
+  font-size: 0.28rem;
   margin-bottom: 0.7rem;
   color: #3c3c3c;
 }
