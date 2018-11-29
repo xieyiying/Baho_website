@@ -153,14 +153,14 @@
 .mobile .brand_center .h3_style {
   margin-bottom: 0.2rem;
 }
-.mobile .brand_center .router-link-exact-active {
+.mobile .brand_center .see_all {
   font-size: 0.24rem;
   color: #3c3c3c;
   margin-bottom: 0.46rem;
   display: block;
   position: relative;
 }
-.mobile .brand_center .router-link-exact-active::after {
+.mobile .brand_center .see_all::after {
   content: '';
   display: block;
   width: 1.5rem;
@@ -187,27 +187,22 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.mobile .brand_center .brands_logo span.kub_logo {
-  background-image: url(../../img/mobile/brand_logo.png);
+.mobile .brand_center .brands_logo span:first-child {
   left: 0.35rem;
 }
-.mobile .brand_center .brands_logo span.diai_logo {
-  background-image: url(../../img/mobile/brand_logo.png);
+.mobile .brand_center .brands_logo span:nth-child(2) {
   right: 0.35rem;
 }
-.mobile .brand_center .brands_logo span.baho_logo {
-  background-image: url(../../img/mobile/brand_logo.png);
+.mobile .brand_center .brands_logo span:nth-child(3) {
   left: 50%;
   margin-left: -0.9rem;
   top: 1.25rem;
 }
-.mobile .brand_center .brands_logo span.mige_logo {
-  background-image: url(../../img/mobile/brand_logo.png);
+.mobile .brand_center .brands_logo span:nth-child(4) {
   left: 0.35rem;
   top: 2.5rem;
 }
-.mobile .brand_center .brands_logo span.maikeshi_logo {
-  background-image: url(../../img/mobile/brand_logo.png);
+.mobile .brand_center .brands_logo span:last-child {
   right: 0.35rem;
   top: 2.5rem;
 }
@@ -230,14 +225,14 @@
   font-size: 0.28rem;
   margin-bottom: 0.2rem;
 }
-.mobile .news_center .news_title .router-link-exact-active {
+.mobile .news_center .news_title .see_all {
   font-size: 0.24rem;
   color: #3c3c3c;
   margin-bottom: 0.46rem;
   display: block;
   position: relative;
 }
-.mobile .news_center .news_title .router-link-exact-active::after {
+.mobile .news_center .news_title .see_all::after {
   content: '';
   display: block;
   width: 1.5rem;
@@ -250,86 +245,6 @@
 }
 .mobile .news_center .news_content {
   margin-top: 0.2rem;
-  padding: 0 0.2rem;
-}
-.mobile .news_center .news_content .news_content_top {
-  width: 100%;
-  height: 4.05rem;
-}
-.mobile .news_center .news_content .news_content_top li {
-  width: 50%;
-  height: 100%;
-  color: #3c3c3c;
-  padding-bottom: 0.22rem;
-}
-.mobile .news_center .news_content .news_content_top li:first-child {
-  background-color: #f1f1f1;
-  border-top-left-radius: 0.3rem;
-}
-.mobile .news_center .news_content .news_content_top li:first-child .news_img {
-  border-top-left-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-  box-shadow: -0.05rem 0 0.1rem #d1d1d1;
-}
-.mobile .news_center .news_content .news_content_top li:last-child {
-  background-color: #e2e2e2;
-  border-top-right-radius: 0.3rem;
-}
-.mobile .news_center .news_content .news_content_top li:last-child .news_img {
-  border-top-right-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
-  box-shadow: 0.05rem 0 0.1rem #d1d1d1;
-}
-.mobile .news_center .news_content .news_content_top li .news_img {
-  display: block;
-  width: 100%;
-  height: 3.04rem;
-  background-image: url(../../img/mobile/news_top.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-.mobile .news_center .news_content .news_content_top li .top_news_title {
-  padding: 0.17rem 0 0.1rem 0.21rem;
-  font-size: 0.32rem;
-}
-.mobile .news_center .news_content .news_content_top li .top_news_content {
-  padding-left: 0.21rem;
-  font-size: 0.28rem;
-}
-.mobile .news_center .news_content .news_content_bottom {
-  margin-top: 0.45rem;
-  width: 100%;
-}
-.mobile .news_center .news_content .news_content_bottom li {
-  width: 100%;
-  height: 4rem;
-  background-color: #f1f1f1;
-  padding-bottom: 0.22rem;
-  border-top-left-radius: 0.2rem;
-  border-top-right-radius: 0.2rem;
-  margin-bottom: 0.25rem;
-}
-.mobile .news_center .news_content .news_content_bottom li:last-child {
-  margin-bottom: 0;
-}
-.mobile .news_center .news_content .news_content_bottom li .news_img {
-  display: block;
-  width: 100%;
-  height: 3.04rem;
-  border-radius: 0.2rem;
-  background-image: url(../../img/mobile/banner.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  box-shadow: 0 -0.03rem 0.05rem #d1d1d1;
-}
-.mobile .news_center .news_content .news_content_bottom li .top_news_title {
-  padding: 0.17rem 0 0.1rem 0.21rem;
-  font-size: 0.32rem;
-}
-.mobile .news_center .news_content .news_content_bottom li .top_news_content {
-  width: 6.15rem;
-  padding-left: 0.21rem;
-  font-size: 0.28rem;
 }
 .mobile .investor_relations {
   margin-top: 0.83rem;

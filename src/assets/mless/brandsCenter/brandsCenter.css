@@ -1,0 +1,102 @@
+.yd_brands_center {
+  width: 100%;
+}
+.yd_brands_center .brand_top_banner {
+  width: 100%;
+  height: 2.73rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 2.73rem;
+}
+.yd_brands_center .brand_top_banner h1 {
+  font-size: 0.44rem;
+}
+.yd_brands_center .brand_describe {
+  width: 100%;
+  margin-top: 0.88rem;
+}
+.yd_brands_center .brand_describe h3 {
+  font-size: 0.32rem;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+.yd_brands_center .brand_describe p {
+  padding: 0 0.46rem;
+  font-size: 0.24rem;
+}
+.yd_brands_center .sub_brands {
+  margin-top: 0.73rem;
+  padding: 0 0.1rem;
+}
+.yd_brands_center .sub_brands li {
+  width: 100%;
+  padding-bottom: 0.38rem;
+  background-color: #f1f1f1;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.yd_brands_center .sub_brands li a {
+  width: 99.5%;
+  height: 3.03rem;
+  border-radius: 0.2rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  box-shadow: 0 0 0.15rem #e7e7e7;
+  border: 1px solid #dddddd;
+  display: block;
+}
+.yd_brands_center .sub_brands li a span {
+  font-size: 0.24rem;
+  position: absolute;
+  bottom: 0.15rem;
+  right: 0.17rem;
+}
+.yd_brands_center .sub_brands li a span::after {
+  content: '';
+  width: 1.3rem;
+  height: 0.01rem;
+  background-color: #0e2e55;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.yd_brands_center .sub_brands li .sub_brand_logo {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+.yd_brands_center .sub_brands li:first-child .sub_brand_logo {
+  width: 1.07rem;
+  height: 0.45rem;
+  margin-top: 0.15rem;
+}
+.yd_brands_center .sub_brands li:nth-child(2) .sub_brand_logo {
+  width: 0.66rem;
+  height: 0.95rem;
+  margin-top: 0.07rem;
+}
+.yd_brands_center .sub_brands li:nth-child(3) .sub_brand_logo {
+  width: 1.35rem;
+  height: 0.35rem;
+  margin-top: 0.3rem;
+}
+.yd_brands_center .sub_brands li:nth-child(4) .sub_brand_logo {
+  width: 1.14rem;
+  height: 0.51rem;
+  margin-top: 0.14rem;
+}
+.yd_brands_center .sub_brands li:last-child .sub_brand_logo {
+  width: 1.17rem;
+  height: 0.6rem;
+  margin-top: 0.24rem;
+}
+.yd_brands_center .sub_brands li p {
+  font-size: 0.2rem;
+  padding: 0 0.2rem;
+  margin-top: 0.14rem;
+}

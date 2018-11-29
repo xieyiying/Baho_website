@@ -54,16 +54,21 @@
         <div id="brand" class="brand_center">
             <h1 class="h1_style">品牌中心</h1>
             <h3 class="h3_style">贝豪给品牌赋予生命</h3>
-            <router-link to="">查看全部&nbsp;>></router-link>
+            <router-link to="/brand" class="see_all">查看全部&nbsp;>></router-link>
             <p>
                 在我们看来，每一个品牌都有生命并其独特的价值。孵化、 萌芽、成长、成熟……它们经历了如玉石般的打磨与雕琢， 凝聚了品牌工匠们的心血和汗水。
             </p>
             <div class="brands_logo">
-                <span class="kub_logo"></span>
+                <!-- <span class="kub_logo"></span>
                 <span class="diai_logo"></span>
                 <span class="baho_logo"></span>
                 <span class="mige_logo"></span>
-                <span class="maikeshi_logo"></span>
+                <span class="maikeshi_logo"></span> -->
+                <span
+                  v-for="(item, index) in subBrandLogo"
+                  :key="index"
+                  :style="{backgroundImage: 'url(' + item.img + ')'}"
+                ></span>
             </div>
         </div>
         <!-- 新闻中心 -->
@@ -71,7 +76,7 @@
             <div class="news_title">
                 <h1>新闻中心</h1>
                 <h3>新闻资讯抢先知晓</h3>
-                <router-link to="">查看全部&nbsp;>></router-link>
+                <router-link to="/news" class="see_all">查看全部&nbsp;>></router-link>
             </div>
             <div class="news_content">
                 <ul class="news_content_top">
@@ -145,7 +150,7 @@
         <div id="joinBaho" class="join_baho">
             <div class="join_title">
                 <h1 class="h1_style">加入贝豪</h1>
-                <h3 class="h3_style"><router-link to="">联系我们&nbsp;>></router-link></h3>
+                <h3 class="h3_style"><router-link to="/join">联系我们&nbsp;>></router-link></h3>
                 <span class="map_icon"></span>
                 <p class="address_title">公司地址：</p>
                 <p class="address_detial">杭州市滨江区江陵路88号万轮科技园5号楼</p>
@@ -177,6 +182,7 @@
     import img from '@/assets/img/mobile/banner.png'
     import img2 from '@/assets/img/mobile/banner3.png'
     import img3 from '@/assets/img/mobile/banner4.png'
+    import logo from '@/assets/img/mobile/brand_logo.png'
     export default {
         name: 'index',
         data() {
@@ -226,7 +232,23 @@
                 ],
                 relationIndex: 0, // 投资者关系tab
                 addressText: '', // 地图文字
-                isScrollToTop: false, // 是否回到顶部
+                subBrandLogo: [
+                    {
+                        img: logo
+                    },
+                    {
+                        img: logo
+                    },
+                    {
+                        img: logo
+                    },
+                    {
+                        img: logo
+                    },
+                    {
+                        img: logo
+                    }
+                ]
             }
         },
         methods: {
@@ -290,5 +312,6 @@
 </script>
 <style>
     @import '../assets/mless/index/index.css';
+    @import '../assets/mless/newsList/newsList.css';
 </style>
 

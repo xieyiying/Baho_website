@@ -26,21 +26,21 @@
                     </template>
                 </template>
                 <template>
-                    <el-submenu key="immediately" index="test">
+                    <el-submenu key="immediately" index="index">
                         <template slot="title">
                             <span slot="title">马上联系</span>
                         </template>
-                        <el-menu-item key="hotline" index="test">
+                        <el-menu-item key="hotline" index="index">
                             <span class="f_left">贝豪热线</span>
                             <span class="f_right">
                                 <a href="tel:0579-00000000">0579-00000000</a>
                             </span>
                         </el-menu-item>
-                        <el-menu-item key="email" index="test">
+                        <el-menu-item key="email" index="index">
                             <span class="f_left">贝豪邮箱</span>
                             <span class="f_right">0579-00000000</span>
                         </el-menu-item>
-                        <el-menu-item key="other" index="test">
+                        <el-menu-item key="other" index="index">
                             <span class="f_left">其他联系方式</span>
                             <span class="f_right contact_icon">
                                 <a href="javascript:;" class="wx_icon" @click="showWXcode">

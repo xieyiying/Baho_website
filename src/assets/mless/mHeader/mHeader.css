@@ -89,7 +89,7 @@
   top: 10px;
 }
 .nav_header .nav_box .el-menu li .contact_icon a.wx_icon {
-  background-image: url(../../img/mobile/next.png);
+  background-image: url(../../img/mobile/weixin.png);
   right: 50px;
 }
 .nav_header .nav_box .el-menu li .contact_icon a.wx_icon img {
@@ -100,6 +100,6 @@
   left: -20px;
 }
 .nav_header .nav_box .el-menu li .contact_icon a.wb_icon {
-  background-image: url(../../img/mobile/next.png);
+  background-image: url(../../img/mobile/weibo.png);
   right: 0;
 }

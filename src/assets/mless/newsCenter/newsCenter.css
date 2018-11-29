@@ -1,0 +1,23 @@
+.yd_news_center {
+  width: 100%;
+}
+.yd_news_center .news_center_banner {
+  width: 100%;
+  height: 2.73rem;
+  text-align: center;
+  line-height: 2.73rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.yd_news_center .news_center_banner h1 {
+  font-size: 0.44rem;
+  color: #ffffff;
+}
+.yd_news_center .news_sub_title {
+  font-size: 0.32rem;
+  margin-top: 0.88rem;
+  text-align: center;
+}
+.yd_news_center .news_content {
+  margin-top: 0.5rem;
+}
