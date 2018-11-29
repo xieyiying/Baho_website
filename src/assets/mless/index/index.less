@@ -166,9 +166,17 @@
             color: #3c3c3c;
             margin-bottom: 46/100rem;
             display: block;
-            &>span {
-                padding-bottom: 3/100rem;
-                border-bottom:  1px solid #0e2e55;
+            position: relative;
+            &::after {
+                content: '';
+                display: block;
+                width: 150/100rem;
+                height: 1px;
+                background-color: #0e2e55;
+                position: absolute;
+                bottom: -2/100rem;
+                left: 50%;
+                margin-left: -80/100rem;
             }
         }
         p {
@@ -239,9 +247,17 @@
                 color: #3c3c3c;
                 margin-bottom: 46/100rem;
                 display: block;
-                &>span {
-                    padding-bottom: 3/100rem;
-                    border-bottom:  1px solid #0e2e55;
+                position: relative;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 150/100rem;
+                    height: 1px;
+                    background-color: #0e2e55;
+                    position: absolute;
+                    bottom: -2/100rem;
+                    left: 50%;
+                    margin-left: -80/100rem;
                 }
             }
         }

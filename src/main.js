@@ -10,9 +10,17 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import 'babel-polyfill'
+import Register from '@/components/register'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import {
+  Swipe,
+  SwipeItem
+} from 'vant'
+
+Vue.use(Swipe).use(SwipeItem)
 Vue.use(ElementUI, { size: 'small' })
+Vue.use(Register)
 
 Vue.config.productionTip = false
 Vue.prototype.$utils = Utils

@@ -57,7 +57,7 @@
 </template>
 <script>
     export default {
-        name: 'nav_header', 
+        name: 'm_header', 
         data() {
             return {
                 isShowNav: false, // 是否显示导航
@@ -65,27 +65,27 @@
                 collapse: false,
                 items: [
                     {
-                        index: '#index',
+                        index: '/index#index',
                         title: '首页'
                     },
                     {
-                        index: '#about',
+                        index: '/index#about',
                         title: '关于贝豪',
                     },
                     {
-                        index: '#brand',
+                        index: '/index#brand',
                         title: '品牌中心',
                     },
                     {
-                        index: '#news',
+                        index: '/index#news',
                         title: '新闻中心',
                     },
                     {
-                        index: '#relation',
+                        index: '/index#relation',
                         title: '投资者关系',
                     },
                     {
-                        index: '#joinBaho',
+                        index: '/index#joinBaho',
                         title: '加入贝豪',
                     },
                 ]
@@ -102,7 +102,8 @@
             },
             // hash跳转
             changHash(id) {
-                let hashId = document.querySelector(id)
+                let pageId = id.substring(id.indexOf('#'))
+                let hashId = document.querySelector(pageId)
                 let y = hashId.offsetTop
                 while(hashId = hashId.offsetParent) {
                     y += hashId.offsetTop

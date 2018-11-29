@@ -158,10 +158,18 @@
   color: #3c3c3c;
   margin-bottom: 0.46rem;
   display: block;
+  position: relative;
 }
-.mobile .brand_center .router-link-exact-active > span {
-  padding-bottom: 0.03rem;
-  border-bottom: 1px solid #0e2e55;
+.mobile .brand_center .router-link-exact-active::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background-color: #0e2e55;
+  position: absolute;
+  bottom: -0.02rem;
+  left: 50%;
+  margin-left: -0.8rem;
 }
 .mobile .brand_center p {
   font-size: 0.28rem;
@@ -227,10 +235,18 @@
   color: #3c3c3c;
   margin-bottom: 0.46rem;
   display: block;
+  position: relative;
 }
-.mobile .news_center .news_title .router-link-exact-active > span {
-  padding-bottom: 0.03rem;
-  border-bottom: 1px solid #0e2e55;
+.mobile .news_center .news_title .router-link-exact-active::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background-color: #0e2e55;
+  position: absolute;
+  bottom: -0.02rem;
+  left: 50%;
+  margin-left: -0.8rem;
 }
 .mobile .news_center .news_content {
   margin-top: 0.2rem;

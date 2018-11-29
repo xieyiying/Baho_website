@@ -1,0 +1,134 @@
+.yd_join_baho {
+  width: 100%;
+}
+.yd_join_baho .join_title {
+  width: 100%;
+  margin-top: 0.88rem;
+  text-align: center;
+}
+.yd_join_baho .join_title h2 {
+  font-size: 0.44rem;
+  color: #3c3c3c;
+}
+.yd_join_baho .join_banner {
+  width: 100%;
+  height: 2.73rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 2.73rem;
+}
+.yd_join_baho .join_banner h1 {
+  font-size: 0.44rem;
+  color: #fff;
+}
+.yd_join_baho .staff_activity .staff_banner {
+  margin-top: 0.68rem;
+}
+.yd_join_baho .promotional_video .video_box {
+  width: 100%;
+  height: 4.7rem;
+  margin-top: 0.68rem;
+  border-top: 2px solid #f4f4f4;
+  border-bottom: 2px solid #f4f4f4;
+}
+.yd_join_baho .promotional_video .video_box video {
+  width: 100%;
+  height: 100%;
+}
+.yd_join_baho .recruitment_info .recruitment_info_detial {
+  margin-top: 0.4rem;
+  padding: 0 0.15rem;
+}
+.yd_join_baho .recruitment_info .recruitment_info_detial li {
+  background-color: #f1f1f1;
+  border: 1px solid #dddddd;
+  border-radius: 0.1rem;
+  box-shadow: 0 0 0.2rem #e7e7e7;
+  padding-bottom: 0.31rem;
+  margin-bottom: 0.26rem;
+}
+.yd_join_baho .recruitment_info .recruitment_info_detial li:last-child {
+  margin-bottom: 0;
+}
+.yd_join_baho .recruitment_info .recruitment_info_detial li h3 {
+  font-size: 0.28rem;
+  color: #3c3c3c;
+  margin-top: 0.27rem;
+  margin-bottom: 0.25rem;
+}
+.yd_join_baho .recruitment_info .recruitment_info_detial li span {
+  color: #3c3c3c;
+  font-size: 0.24rem;
+  margin-right: 0.3rem;
+}
+.yd_join_baho .recruitment_info .recruitment_info_detial li .info_content {
+  text-align: left;
+  padding: 0 0.2rem 0.1rem 0.2rem;
+  margin-top: 0.3rem;
+  font-size: 0.24rem;
+}
+.yd_join_baho .contact_us .contact_address {
+  margin-top: 0.69rem;
+}
+.yd_join_baho .contact_us .contact_address .map_icon {
+  display: block;
+  width: 0.41rem;
+  height: 0.41rem;
+  background-image: url(../../img/mobile/ditu_logo.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+.yd_join_baho .contact_us .contact_address p {
+  margin-top: 0.1rem;
+}
+.yd_join_baho .contact_us .contact_address p.address_title {
+  font-size: 0.24rem;
+}
+.yd_join_baho .contact_us .contact_address p.address_detial {
+  font-size: 0.28rem;
+  font-weight: bold;
+}
+.yd_join_baho .contact_us .map_container {
+  width: 100%;
+  height: 4.7rem;
+  margin-top: 0.44rem;
+}
+.yd_join_baho .contact_us .map_container #container {
+  width: 100%;
+  height: 100%;
+}
+.yd_join_baho .contact_us .map_container #container .amap-logo {
+  display: none!important;
+}
+.yd_join_baho .contact_us .map_container #container .amap-copyright {
+  opacity: 0;
+}
+.yd_join_baho .contact_us .join_baho_contact {
+  height: 1.4rem;
+  padding: 0.5rem 0.4rem 0 0.4rem;
+  text-align: left;
+}
+.yd_join_baho .contact_us .join_baho_contact li {
+  width: 50%;
+}
+.yd_join_baho .contact_us .join_baho_contact li .contact_icon {
+  width: 0.41rem;
+  height: 0.41rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  font-size: 0.28rem;
+}
+.yd_join_baho .contact_us .join_baho_contact li .contact_message {
+  display: inline-block;
+  text-align: left;
+  font-size: 0.28rem;
+}
+.yd_join_baho .contact_us .join_baho_contact li:first-child .contact_icon {
+  background-image: url(../../img/mobile/phone_icon.png);
+}
+.yd_join_baho .contact_us .join_baho_contact li:last-child .contact_icon {
+  background-image: url(../../img/mobile/email_icon.png);
+}

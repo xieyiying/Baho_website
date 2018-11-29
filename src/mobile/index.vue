@@ -54,7 +54,7 @@
         <div id="brand" class="brand_center">
             <h1 class="h1_style">品牌中心</h1>
             <h3 class="h3_style">贝豪给品牌赋予生命</h3>
-            <router-link to=""><span>查看全部&nbsp;>></span></router-link>
+            <router-link to="">查看全部&nbsp;>></router-link>
             <p>
                 在我们看来，每一个品牌都有生命并其独特的价值。孵化、 萌芽、成长、成熟……它们经历了如玉石般的打磨与雕琢， 凝聚了品牌工匠们的心血和汗水。
             </p>
@@ -71,7 +71,7 @@
             <div class="news_title">
                 <h1>新闻中心</h1>
                 <h3>新闻资讯抢先知晓</h3>
-                <router-link to=""><span>查看全部&nbsp;>></span></router-link>
+                <router-link to="">查看全部&nbsp;>></router-link>
             </div>
             <div class="news_content">
                 <ul class="news_content_top">
@@ -174,17 +174,11 @@
     </div>
 </template>
 <script>
-    import m_banner from '@/components/mBanner/mBanner.vue'
     import img from '@/assets/img/mobile/banner.png'
     import img2 from '@/assets/img/mobile/banner3.png'
     import img3 from '@/assets/img/mobile/banner4.png'
-    import m_top from '@/components/mBackToTop/mBackToTop.vue'
     export default {
         name: 'index',
-        components: {
-            m_banner,
-            m_top
-        },
         data() {
             return {
                 bannerImage: [
