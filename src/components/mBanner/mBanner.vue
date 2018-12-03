@@ -2,7 +2,7 @@
     <div class="m_banner">
         <van-swipe :autoplay="3000" indicator-color="white" class="banner_box">
             <van-swipe-item v-for="(img, index) in bannerImage" :key="index">
-                <img :src="img.address" alt="" style="width: 100%; height: 100%">
+                <img :src="img.phoneAddress" alt="" style="width: 100%; height: 100%">
             </van-swipe-item>
         </van-swipe>
     </div>

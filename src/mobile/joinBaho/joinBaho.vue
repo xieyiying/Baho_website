@@ -1,50 +1,55 @@
 <template>
     <div class="yd_join_baho content_mtop">
         <!-- 顶部banner -->
-        <div class="join_banner" :style="{backgroundImage: 'url(' + img + ')'}">
-            <h1>加入贝豪</h1>
+        <div class="join_banner" :style="{backgroundImage: 'url(' + topBanner + ')'}">
+            <h1>{{title}}</h1>
         </div>
         <!-- 员工活动 -->
         <div class="staff_activity join_title">
-            <h2>员工活动</h2>
+            <h2>{{staffTitle}}</h2>
             <m_banner :bannerImage="bannerImage" class="staff_banner"></m_banner>
         </div>
         <!-- 宣传视频 -->
         <div class="promotional_video join_title">
-            <h2>宣传视频</h2>
+            <h2>{{videoTitle}}</h2>
             <div class="video_box">
-                <video src="http://47.99.165.110:80/video/baho_video.mp4" controls="controls" poster="../../assets/img/mobile/video.jpg"></video>
+                <video :src="videoUrl" controls="controls" poster="../../assets/img/mobile/video.jpg"></video>
             </div>
         </div>
         <!-- 招聘信息 -->
         <div class="recruitment_info join_title">
-            <h2>招聘信息</h2>
+            <h2>{{recruitTitle}}</h2>
             <ul class="recruitment_info_detial">
-                <li @click="showRecruitDetial(index)" v-for="(item, index) in recruitDetial" :key="index">
-                    <h3>{{item.title}}</h3>
-                    <span>工作地点：杭州滨江</span>
-                    <span>学历要求：无</span>
-                    <span>薪资：面谈</span>
-                    <span style="margin-right: 0">人数：5</span>
+                <li
+                  @click="showRecruitDetial(index, item.id)"
+                  v-for="(item, index) in recruitDetial"
+                  :key="index"
+                >
+                    <h3>{{item.name}}</h3>
+                    <span>工作地点：{{item.workPlace}}</span>
+                    <span>学历要求：{{item.education}}</span>
+                    <span>薪资：{{item.salary}}</span>
+                    <span style="margin-right: 0">人数：{{item.number}}</span>
                     <div class="info_content" v-show="detialIndex === index">
-                        <strong>岗位职责：</strong><br>
-                        1. 三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验。<br>
-                        2. 团队意识强，团队协作能力突出。<br><br>
-                        <strong>任职条件：</strong><br>
-                        1. 三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验。<br>
-                        2. 团队意识强，团队协作能力突出。<br>
-                        3. 三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验三年以上产品拍摄经验。<br>
+                        <div>
+                            <strong>岗位职责：</strong>
+                            <p v-html="responsibility"></p>
+                        </div>
+                        <div>
+                            <strong>任职条件：</strong><br>
+                            <p v-html="qualification"></p>
+                        </div>
                     </div>
                 </li>
             </ul>
         </div>
         <!-- 联系我们 -->
         <div class="contact_us join_title">
-            <h2 >联系我们</h2>
+            <h2>{{contactTitle}}</h2>
             <div class="contact_address">
                 <span class="map_icon"></span>
                 <p class="address_title">公司地址：</p>
-                <p class="address_detial">杭州市滨江区江陵路88号万轮科技园5号楼</p>
+                <p class="address_detial">{{companyAddress}}</p>
             </div>
             <div class="map_container">
                 <div id="container"></div>
@@ -54,14 +59,14 @@
                     <span class="contact_icon"></span>
                     <span class="contact_message">
                         联系方式：<br>
-                        <a href="400-967-8655">400-967-8655</a>
+                        <a href="400-967-8655">{{companyPhone}}</a>
                     </span>
                 </li>
                 <li class="f_left">
                     <span class="contact_icon"></span>
                     <span class="contact_message">
                         公司邮箱：<br>
-                        bahogroup@baho.cn 
+                        {{companyEmail}}
                     </span>
                 </li>
             </ul>
@@ -70,42 +75,104 @@
     </div>
 </template>
 <script>
-    import joinBanner from '@/assets/img/mobile/banner.png'
-    import img from '@/assets/img/mobile/banner.png'
-    import img2 from '@/assets/img/mobile/banner3.png'
-    import img3 from '@/assets/img/mobile/banner4.png'
+    import { joinBahoInterface } from '@/utils/mHttp.js'
     export default {
         name: 'join',
         data() {
             return {
-                img: joinBanner, // 顶部banner
-                bannerImage: [
-                    {
-                        address: img,
-                    },
-                    {
-                        address: img2,
-                    },
-                    {
-                        address: img3,
-                    },
-                ], // 员工活动轮播图
-                recruitDetial: [
-                    {
-                        title: '摄影师'
-                    },
-                    {
-                        title: '视觉设计师'
-                    },
-                    {
-                        title: '天猫运营'
-                    },
-                ],
-                detialIndex: null, //  是否显示招聘信息详情
-                clickShowDetial: true
+                language: 'zh',
+                topBanner: '', // 顶部banner
+                title: '',
+                staffTitle: '', // 员工活动标题
+                bannerImage: [], // 员工活动轮播图
+                videoTitle: '', // 视频标题
+                videoUrl: '', // 视频地址
+                recruitTitle: '', // 招聘标题
+                recruitDetial: [],
+                detialIndex: null,
+                clickShowDetial: true, //  是否显示招聘信息详情
+                responsibility: '', // 岗位职责
+                qualification: '', // 任职条件
+                contactTitle: '', // 联系我们标题
+                companyAddress: '',
+                companyPhone: '',
+                companyEmail: '',
             }
         },
         methods: {
+            getBahoTitle() {
+                joinBahoInterface.getDetialTitle({
+                    languageType: this.language
+                }).then(res => {
+                    if(res.success) {
+                        this.topBanner = res.body.title.detailPicUrl // 顶部banner
+                        this.title = res.body.title.name
+                    }
+                })
+            },
+            // 获取员工活动banner
+            getActivityBanner() {
+                joinBahoInterface.getActivityBanner({
+                    languageType: this.language
+                }).then(res => {
+                    if(res.success) {
+                        this.staffTitle = res.body.title
+                        this.bannerImage = res.body.pic
+                    }
+                })
+            },
+            // 获取视频
+            getVideoData() {
+                joinBahoInterface.getVideo({
+                    languageType: this.language
+                }).then(res => {
+                    if(res.success) {
+                        this.videoTitle = res.body.title
+                        this.videoUrl = res.body.list[0].videoUrl
+                    }
+                })
+            },
+            // 获取招聘信息
+            getRecruitInfoData() {
+                joinBahoInterface.getRecruitInfoData({
+                    languageType: this.language
+                }).then(res => {
+                    console.log(res)
+                    if(res.success) {
+                        this.recruitTitle = res.body.title
+                        this.recruitDetial = res.body.list
+                    }
+                })
+            },
+            // 获取招聘信息详情
+            getRecruitInfo(id) {
+                joinBahoInterface.getRecruitInfoDetial({
+                    id: id
+                }).then(res => {
+                    if(res.success) {
+                        this.responsibility = res.body.bahoZhaopin.postDuties // 岗位职责
+                        this.qualification = res.body.bahoZhaopin.requirements // 任职条件
+                    }
+                })
+            },
+            // 显示招聘信息详情
+            showRecruitDetial(index, id) {
+                this.detialIndex = index
+                this.getRecruitInfo(id)
+            },
+            // 获取联系我们数据
+            getContactData() {
+                joinBahoInterface.getContactUsData({
+                    languageType: this.language
+                }).then(res => {
+                    if(res.success) {
+                        this.contactTitle = res.body.title
+                        this.companyAddress = res.body.info[0].address
+                        this.companyPhone = res.body.info[0].phone
+                        this.companyEmail = res.body.info[0].email
+                    }
+                })
+            },
             // 初始化地图
             handleMap (language, addressText) {
                 // 初始化地图对象，加载地图
@@ -122,10 +189,13 @@
                 var infoWindow = new window.AMap.InfoWindow({ content: info.join('<br/>') })
                 infoWindow.open(map, map.getCenter())
             },
-            // 显示招聘信息详情
-            showRecruitDetial(index) {
-                this.detialIndex = index
-            }
+        },
+        created() {
+            this.getBahoTitle()
+            this.getActivityBanner()
+            this.getVideoData()
+            this.getRecruitInfoData()
+            this.getContactData()
         },
         mounted() {
             this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>'

@@ -29,7 +29,6 @@
                 }, res => {
                     this.addrMasterMap = res[0].addrMasterMap
                 })
-
             }
         },
         created() {

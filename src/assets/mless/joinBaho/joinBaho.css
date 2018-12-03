@@ -68,6 +68,9 @@
   margin-top: 0.3rem;
   font-size: 0.24rem;
 }
+.yd_join_baho .recruitment_info .recruitment_info_detial li .info_content div:first-child {
+  margin-bottom: 0.3rem;
+}
 .yd_join_baho .contact_us .contact_address {
   margin-top: 0.69rem;
 }

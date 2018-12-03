@@ -9,7 +9,7 @@ const ydRouter = [ // 移动
   {
     path: '/index',
     name: 'index',
-    component: () => import('@/mobile/index.vue')
+    component: () => import('@/mobile/index/index.vue')
   },
   // 加入贝豪详情页
   {

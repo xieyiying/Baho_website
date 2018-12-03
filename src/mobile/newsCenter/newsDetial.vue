@@ -1,27 +1,40 @@
 <template>
     <div class="yd_news_detial content_mtop">
-        <h1 class="news_title">喜讯！贝豪获得嘉御基金投资！</h1>
-        <p class="news_time">发布时间：<span>2018-10-31</span></p>
-        <div class="news_content">
-            dvfdvvvfvdfvdvsfdv
-            <img src="../../assets/img/mobile/banner.png" alt="">
-        </div>
+        <h1 class="news_title">{{title}}</h1>
+        <p class="news_time">发布时间：<span>{{updateDate}}</span></p>
+        <div class="news_content" v-html="content"></div>
         <m_top></m_top>
     </div>
 </template>
 <script>
+    import { getSingleNewsData } from '@/utils/mHttp.js'
     export default {
         name: 'news_detial',
         data() {
             return {
-
+                newsId: '',
+                title: '',
+                updateDate: '',
+                content: ''
             }
         },
         methods: {
-
+            getNewsDetial(id) {
+                getSingleNewsData({
+                    id: id
+                }).then(res => {
+                    if(res.success) {
+                        this.title = res.body.info.title
+                        this.updateDate = res.body.info.updateDate
+                        this.content = res.body.info.content
+                    }
+                    
+                })
+            }
         },
         created() {
-
+            this.newsId = this.$route.query.newsId
+            this.getNewsDetial(this.newsId)
         }
     }
 </script>

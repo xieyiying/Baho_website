@@ -1,46 +1,29 @@
 <template>
     <div class="yd_news_center content_mtop">
-        <div class="news_center_banner" :style="{backgroundImage: 'url(' + brandBanner +')'}">
-            <h1>新闻中心</h1>
+        <div class="news_center_banner" :style="{backgroundImage: 'url(' + newsBanner +')'}">
+            <h1>{{newsTitle}}</h1>
         </div>
-        <h3 class="news_sub_title">新闻资讯抢先知晓</h3>
+        <h3 class="news_sub_title">{{newsSubTitle}}</h3>
         <div class="news_content">
             <ul class="news_content_top">
-                <li class="f_left">
-                    <router-link to="">
-                        <span class="news_img"></span>
-                        <h2 class="top_news_title">喜讯！</h2>
-                        <p class="top_news_content text_over">9贝豪获得嘉御基金投资！</p>
-                    </router-link>
-                </li>
-                <li class="f_left">
-                    <router-link to="">
-                        <span class="news_img"></span>
-                        <h2 class="top_news_title">喜讯！</h2>
-                        <p class="top_news_content text_over">9贝豪获得嘉御基金投资！</p>
+                <li
+                  class="f_left"
+                  v-for="(news, index) in topNewsList"
+                  :key="index"
+                >
+                    <router-link :to="{path: '/newsDetial', query: {newsId: news.id}}">
+                        <span class="news_img" :style="{backgroundImage: 'url(' + news.name + ')'}"></span>
+                        <h2 class="top_news_title">{{news.title}}</h2>
+                        <p class="top_news_content text_over">{{news.content}}</p>
                     </router-link>
                 </li>
             </ul>
             <ul class="news_content_bottom">
-                <li>
-                    <router-link to="">
-                        <span class="news_img"></span>
-                        <h2 class="top_news_title">喜讯！</h2>
-                        <p class="top_news_content text_over">9贝豪获得嘉御基金投资！9贝豪获得嘉御基金投资！9贝豪获得嘉御基金投资！</p>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="">
-                        <span class="news_img"></span>
-                        <h2 class="top_news_title">喜讯！</h2>
-                        <p class="top_news_content text_over">9贝豪获得嘉御基金投资！9贝豪获得嘉御基金投资！9贝豪获得嘉御基金投资！</p>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="">
-                        <span class="news_img"></span>
-                        <h2 class="top_news_title">喜讯！</h2>
-                        <p class="top_news_content text_over">9贝豪获得嘉御基金投资！9贝豪获得嘉御基金投资！9贝豪获得嘉御基金投资！</p>
+                <li v-for="(news, index) in bottomNewsList" :key="index">
+                    <router-link :to="{path: '/newsDetial', query: {newsId: news.id}}">
+                        <span class="news_img" :style="{backgroundImage: 'url(' + news.name + ')'}"></span>
+                        <h2 class="top_news_title">{{news.title}}</h2>
+                        <p class="top_news_content text_over">{{news.content}}</p>
                     </router-link>
                 </li>
             </ul>
@@ -50,12 +33,37 @@
 </template>
 <script>
     import img from '@/assets/img/mobile/banner.png'
+    import { getAllNewsData } from '@/utils/mHttp.js'
     export default {
         name: 'news',
         data() {
             return {
-                brandBanner: img,
+                language: 'zh',
+                newsBanner: '',
+                newsTitle: '',
+                newsSubTitle: '',
+                topNewsList: [],
+                bottomNewsList: []
             }
+        },
+        methods: {
+            getNewsList() {
+                getAllNewsData({
+                    languageType: this.language,
+                    num: 'all'
+                }).then(res => {
+                    if(res.success) {
+                        this.newsBanner = res.body.title.detailPicUrl
+                        this.newsTitle = res.body.title.name
+                        this.newsSubTitle = res.body.title.chirdenTitle
+                        this.topNewsList = res.body.topList
+                        this.bottomNewsList = res.body.list
+                    }
+                })
+            }
+        },
+        created() {
+            this.getNewsList()
         }
     }
 </script>
