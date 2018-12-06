@@ -26,17 +26,17 @@
                   :key="index"
                 >
                     <h3>{{item.name}}</h3>
-                    <span>工作地点：{{item.workPlace}}</span>
-                    <span>学历要求：{{item.education}}</span>
-                    <span>薪资：{{item.salary}}</span>
-                    <span style="margin-right: 0">人数：{{item.number}}</span>
+                    <span>{{language == 'zh' ? '工作地点' : 'Working Location'}}：{{item.workPlace}}</span>
+                    <span>{{language == 'zh' ? '学历要求' : 'Educational'}}：{{item.education}}</span>
+                    <span>{{language == 'zh' ? '薪资' : 'Salary'}}：{{item.salary}}</span>
+                    <span style="margin-right: 0">{{language == 'zh' ? '人数' : 'Recruiting Numbers'}}：{{item.number}}</span>
                     <div class="info_content" v-show="detialIndex === index">
                         <div>
-                            <strong>岗位职责：</strong>
+                            <strong>{{language == 'zh' ? '岗位职责' : 'Responsibilities'}}：</strong>
                             <p v-html="responsibility"></p>
                         </div>
                         <div>
-                            <strong>任职条件：</strong><br>
+                            <strong>{{language == 'zh' ? '任职要求' : 'Requirements'}}：</strong><br>
                             <p v-html="qualification"></p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
             <h2>{{contactTitle}}</h2>
             <div class="contact_address">
                 <span class="map_icon"></span>
-                <p class="address_title">公司地址：</p>
+                <p class="address_title">{{language == 'zh' ? '公司地址': 'Company Address'}}：</p>
                 <p class="address_detial">{{companyAddress}}</p>
             </div>
             <div class="map_container">
@@ -58,14 +58,14 @@
                 <li class="f_left">
                     <span class="contact_icon"></span>
                     <span class="contact_message">
-                        联系方式：<br>
-                        <a href="400-967-8655">{{companyPhone}}</a>
+                        {{language == 'zh' ? '联系方式' : 'Tel'}}：<br>
+                        <a :href="'tel:' + companyPhone">{{companyPhone}}</a>
                     </span>
                 </li>
                 <li class="f_left">
                     <span class="contact_icon"></span>
                     <span class="contact_message">
-                        公司邮箱：<br>
+                        {{language == 'zh' ? '公司邮箱' : 'Email'}}：<br>
                         {{companyEmail}}
                     </span>
                 </li>
@@ -137,7 +137,6 @@
                 joinBahoInterface.getRecruitInfoData({
                     languageType: this.language
                 }).then(res => {
-                    console.log(res)
                     if(res.success) {
                         this.recruitTitle = res.body.title
                         this.recruitDetial = res.body.list
@@ -189,17 +188,31 @@
                 var infoWindow = new window.AMap.InfoWindow({ content: info.join('<br/>') })
                 infoWindow.open(map, map.getCenter())
             },
+            executeAll() {
+                this.getBahoTitle()
+                this.getActivityBanner()
+                this.getVideoData()
+                this.getRecruitInfoData()
+                this.getContactData()
+                if(this.language === 'zh') {
+                    this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>';
+                    this.handleMap("zh_cn", this.addressText);
+                } else if(this.language === 'en') {
+                    this.addressText = '<div> <p style="font-size:10px">Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang</p></div>'
+                    this.handleMap('en', this.addressText)
+                }
+            }
         },
         created() {
-            this.getBahoTitle()
-            this.getActivityBanner()
-            this.getVideoData()
-            this.getRecruitInfoData()
-            this.getContactData()
+            
         },
         mounted() {
-            this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>'
-            this.handleMap('zh_cn', this.addressText)
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
+            this.executeAll()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.executeAll()
+            })
         },
     }
 </script>

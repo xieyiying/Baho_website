@@ -26,6 +26,7 @@ Vue.config.productionTip = false
 Vue.prototype.$utils = Utils
 Vue.prototype.$axios = axios
 Vue.prototype.$Bus = new Vue()
+Vue.prototype.$mBus = new Vue()
 
 // const Bus = new Vue()
 

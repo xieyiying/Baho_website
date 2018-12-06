@@ -2,8 +2,8 @@
     <div class="brand_center" :style="{backgroundImage: 'url(' + brandBgImage +')'}">
         <h1 class="h1_style">{{brandTitle}}</h1>
         <h3 class="h3_style">{{brandSubTitle}}</h3>
-        <router-link to="/brand" class="see_all">查看全部&nbsp;>></router-link>
-        <p>{{brandDescribe}}</p>
+        <router-link to="/brand" class="see_all">{{language === 'zh' ? '查看全部' : 'See All'}}&nbsp;>></router-link>
+        <p v-html="brandDescribe" class="introText"></p>
         <div class="brands_logo">
             <span
                 v-for="(item, index) in subBrandLogo"
@@ -49,7 +49,12 @@
             },
         },
         created() {
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
             this.getBrandsCenterData()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getBrandsCenterData()
+            })
         }
     }
 </script>

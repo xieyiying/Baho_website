@@ -80,11 +80,12 @@
 .mobile .about {
   width: 100%;
   background-color: #fff;
+  margin-top: 0.77rem;
 }
 .mobile .about .yd_about_baho {
   width: 100%;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 3.2rem;
   text-align: center;
 }
 .mobile .about .yd_about_baho .about_tab {
@@ -99,6 +100,14 @@
   font-weight: bold;
   border-bottom: 5px solid #e2e2e2;
   position: relative;
+}
+.mobile .about .yd_about_baho .about_tab li.enLi:first-child,
+.mobile .about .yd_about_baho .about_tab li.enLi:last-child {
+  width: 30%;
+}
+.mobile .about .yd_about_baho .about_tab li.enLi:nth-child(2),
+.mobile .about .yd_about_baho .about_tab li.enLi:nth-child(3) {
+  width: 20%;
 }
 .mobile .about .yd_about_baho .about_tab li.active {
   color: #103869;
@@ -169,9 +178,12 @@
   left: 50%;
   margin-left: -0.8rem;
 }
-.mobile .brand_center p {
+.mobile .brand_center .introText {
+  width: 100%;
+  height: 1.2rem;
   font-size: 0.28rem;
   text-align: left;
+  overflow: hidden;
 }
 .mobile .brand_center .brands_logo {
   position: relative;
@@ -184,6 +196,7 @@
   height: 1.8rem;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  border-radius: 50%;
 }
 .mobile .brand_center .brands_logo span:first-child {
   left: 0.35rem;
@@ -371,7 +384,7 @@
 }
 .mobile .join_baho .join_baho_contact {
   height: 1.4rem;
-  padding: 0.5rem 0.4rem 0 0.4rem;
+  padding: 0.5rem 0.3rem 0 0.3rem;
   text-align: left;
 }
 .mobile .join_baho .join_baho_contact li {

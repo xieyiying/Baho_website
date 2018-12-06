@@ -64,3 +64,7 @@ export const GetRecruitInfoList = (params, callback) => {
 export const GetRecruitInfoListDetial = (params, callback) => {
   return utils.Get('bhgw/page/bahoweb/recruit/bahoZhaopin/getRecruitByNameInfo', params, callback)
 }
+// 4. 联系我们
+export const GetContactInfo = (params, callback) => {
+  return utils.Get('bhgw/page/bahoweb/contact/bahoContactPhone/webInfoListDetails', params, callback)
+}

@@ -4,14 +4,14 @@
             <h1 class="h1_style">{{bahoTitle}}</h1>
             <h3 class="h3_style">{{bahoSubTitle}}</h3>
             <ul class="about_tab">
-            <li
-                v-for="(item, index) in bahoTab"
-                :key="index"
-                :class="['f_left', {active: tabindex == index}]"
-                @click="changeTab(index, item.id)"
-            >
-                <span>{{item.name}}</span>
-            </li>
+                <li
+                    v-for="(item, index) in bahoTab"
+                    :key="index"
+                    :class="['f_left', {active: tabindex == index}, {enLi: language === 'en'}]"
+                    @click="changeTab(index, item.id)"
+                >
+                    <span>{{item.name}}</span>
+                </li>
             </ul>
             <div class="tab_content">
                 <img :src="bahoDetialImage" alt>
@@ -40,7 +40,7 @@
             // 获取关于贝豪标题以及导航信息
             getBahoData() {
                 indexInterface.getBahoData({
-                        languageType: this.language
+                    languageType: this.language
                 }).then(res => {
                     if (res.success) {
                         this.bahoTitle = res.body.title.name;
@@ -69,7 +69,12 @@
             },
         },
         created() {
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
             this.getBahoData()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getBahoData()
+            })
         }
     }
 </script>

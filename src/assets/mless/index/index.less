@@ -81,10 +81,11 @@
     .about {
         width: 100%;
         background-color: #fff;
+        margin-top: 77/100rem;
         .yd_about_baho {
             width: 100%;
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: 100% 320/100rem;
             text-align: center;
             .about_tab {
                 padding: 0 10/100rem;
@@ -97,6 +98,14 @@
                     font-weight: bold;
                     border-bottom: 5px solid #e2e2e2;
                     position: relative;
+                    &.enLi {
+                        &:first-child, &:last-child {
+                            width: 30%;
+                        }
+                        &:nth-child(2), &:nth-child(3) {
+                            width: 20%;
+                        }
+                    }
                     &.active {
                         color: #103869;
                         border-bottom-color: #103869;
@@ -145,7 +154,6 @@
     .brand_center {
         margin-top: 86/100rem;
         height: 894/100rem;
-        // background-image: url(../../img/mobile/brand_bg.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         text-align: center;
@@ -171,9 +179,12 @@
                 margin-left: -80/100rem;
             }
         }
-        p {
+        .introText {
+            width: 100%;
+            height: 120/100rem;
             font-size: 14/50rem;
             text-align: left;
+            overflow: hidden;
         }
         .brands_logo {
             position: relative;
@@ -185,51 +196,23 @@
                 height: 180/100rem;
                 background-size: 100% 100%;
                 background-repeat: no-repeat;
-                // &.kub_logo {
-                //     background-image: url(../../img/mobile/brand_logo.png);
-                //     left: 35/100rem;
-                // }
-                // &.diai_logo {
-                //     background-image: url(../../img/mobile/brand_logo.png);
-                //     right: 35/100rem;
-                // }
-                // &.baho_logo {
-                //     background-image: url(../../img/mobile/brand_logo.png);
-                //     left: 50%;
-                //     margin-left: -90/100rem;
-                //     top: 125/100rem;
-                // }
-                // &.mige_logo {
-                //     background-image: url(../../img/mobile/brand_logo.png);
-                //     left: 35/100rem;
-                //     top: 250/100rem;
-                // }
-                // &.maikeshi_logo {
-                //     background-image: url(../../img/mobile/brand_logo.png);
-                //     right: 35/100rem;
-                //     top: 250/100rem;
-                // }
+                border-radius: 50%;
                 &:first-child {
-                    // background-image: url(../../img/mobile/brand_logo.png);
                     left: 35/100rem;
                 }
                 &:nth-child(2) {
-                    // background-image: url(../../img/mobile/brand_logo.png);
                     right: 35/100rem;
                 }
                 &:nth-child(3) {
-                    // background-image: url(../../img/mobile/brand_logo.png);
                     left: 50%;
                     margin-left: -90/100rem;
                     top: 125/100rem;
                 }
                 &:nth-child(4) {
-                    // background-image: url(../../img/mobile/brand_logo.png);
                     left: 35/100rem;
                     top: 250/100rem;
                 }
                 &:last-child {
-                    // background-image: url(../../img/mobile/brand_logo.png);
                     right: 35/100rem;
                     top: 250/100rem;
                 }
@@ -242,7 +225,6 @@
         margin-top: 78/100rem;
         .news_title {
             height: 223/100rem;
-            // background-image: url(../../img/mobile/news_bg.png);
             background-size: 100%;
             background-repeat: no-repeat;
             text-align: center;
@@ -285,7 +267,6 @@
         width: 100%;
         .relation_title {
             height: 257/100rem;
-            // background-image: url(../../img/mobile/relation_bg.png);
             background-repeat: no-repeat;
             background-size: 100%;
             .h1_style {
@@ -352,7 +333,6 @@
         text-align: center;
         .join_title {
             width: 100%;
-            // background-image: url(../../img/mobile/join_baho.png);
             background-size: 100%;
             background-repeat: no-repeat;
             .h1_style {
@@ -409,7 +389,7 @@
         }
         .join_baho_contact {
             height: 140/100rem;
-            padding: 50/100rem 40/100rem 0 40/100rem;
+            padding: 50/100rem 30/100rem 0 30/100rem;
             text-align: left;
             li {
                 width: 50%;

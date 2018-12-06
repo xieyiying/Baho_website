@@ -1,7 +1,7 @@
 <template>
     <div class="yd_news_detial content_mtop">
         <h1 class="news_title">{{title}}</h1>
-        <p class="news_time">发布时间：<span>{{updateDate}}</span></p>
+        <p class="news_time">{{language == 'zh' ? '发布时间' : 'Release time'}}：<span>{{updateDate}}</span></p>
         <div class="news_content" v-html="content"></div>
         <m_top></m_top>
     </div>
@@ -12,6 +12,7 @@
         name: 'news_detial',
         data() {
             return {
+                language: 'zh',
                 newsId: '',
                 title: '',
                 updateDate: '',
@@ -34,7 +35,12 @@
         },
         created() {
             this.newsId = this.$route.query.newsId
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
             this.getNewsDetial(this.newsId)
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.$router.push({path: '/news'})
+            })
         }
     }
 </script>

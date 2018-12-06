@@ -6,7 +6,7 @@
             <router-link to="/join">{{joinSubTitle}}&nbsp;>></router-link>
             </h3>
             <span class="map_icon"></span>
-            <p class="address_title">公司地址：</p>
+            <p class="address_title">{{language == 'zh' ? '公司地址': 'Company Address'}}：</p>
             <p class="address_detial">{{companyAddress}}</p>
         </div>
         <div class="map_container">
@@ -15,14 +15,14 @@
         <ul class="join_baho_contact">
             <li class="f_left">
             <span class="contact_icon"></span>
-            <span class="contact_message">联系方式：
+            <span class="contact_message">{{language == 'zh' ? '联系方式' : 'Tel'}}：
                 <br>
-                <a href="400-967-8655">{{companyPhone}}</a>
+                <a :href="'tel:' + companyPhone">{{companyPhone}}</a>
             </span>
             </li>
             <li class="f_left">
             <span class="contact_icon"></span>
-            <span class="contact_message">公司邮箱：
+            <span class="contact_message">{{language == 'zh' ? '公司邮箱' : 'Email'}}：
                 <br>{{companyEmail}}
             </span>
             </li>
@@ -47,7 +47,7 @@
         },
         methods: {
             // 获取加入贝豪数据
-            getJoinBahoData() {
+            getBahoData() {
                 indexInterface.getJoinBahoData({
                     languageType: this.language
                 }).then(res => {
@@ -83,12 +83,29 @@
             }
         },
         created() {
-            this.getJoinBahoData()
+            
         },
         mounted() {
-            this.addressText =
-            '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>';
-            this.handleMap("zh_cn", this.addressText);
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
+            this.getBahoData()
+            if(this.language === 'zh') {
+                this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>';
+                this.handleMap("zh_cn", this.addressText);
+            } else if(this.language === 'en') {
+                this.addressText = '<div> <p style="font-size:10px">Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang</p></div>'
+                this.handleMap('en', this.addressText)
+            }
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getBahoData()
+                if(this.language === 'zh') {
+                    this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>';
+                    this.handleMap("zh_cn", this.addressText);
+                } else if(this.language === 'en') {
+                    this.addressText = '<div> <p style="font-size:10px">Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang</p></div>'
+                    this.handleMap('en', this.addressText)
+                }
+            })
         },
     }
 </script>

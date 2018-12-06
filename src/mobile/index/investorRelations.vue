@@ -42,11 +42,13 @@
                 indexInterface.getRelationData({
                     languageType: this.language
                 }).then(res => {
-                    this.relationBgImage = res.body.title.picUrl // 投资者关系背景
-                    this.relationTitle = res.body.title.name // 投资者关系标题
-                    this.relationSubTitle = res.body.title.chirdenTitle // 投资者关系子标题
-                    this.relationTabs = res.body.menu // 投资者关系tab
-                    this.getRelationDetial(this.relationTabs[this.relationIndex].id)
+                    if(res.success) {
+                        this.relationBgImage = res.body.title.picUrl // 投资者关系背景
+                        this.relationTitle = res.body.title.name // 投资者关系标题
+                        this.relationSubTitle = res.body.title.chirdenTitle // 投资者关系子标题
+                        this.relationTabs = res.body.menu // 投资者关系tab
+                        this.getRelationDetial(this.relationTabs[this.relationIndex].id)
+                    }
                 })
             },
             // 获取投资者关系详情
@@ -67,7 +69,12 @@
             },
         },
         created() {
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
             this.getRelationData()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getRelationData()
+            })
         }
     }
 </script>

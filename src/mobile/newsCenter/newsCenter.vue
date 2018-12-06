@@ -63,7 +63,13 @@
             }
         },
         created() {
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
             this.getNewsList()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getNewsList()
+            })
+            
         }
     }
 </script>

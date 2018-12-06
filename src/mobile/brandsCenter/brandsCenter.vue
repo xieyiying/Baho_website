@@ -10,7 +10,7 @@
         <ul class="sub_brands">
             <li v-for="(item, index) in subBrandsArr" :key="index">
                 <a :href="item.url" :style="{backgroundImage: 'url(' + item.mainPicUrl +')'}">
-                    <span>了解更多>></span>
+                    <span>{{language === 'zh' ? '了解更多' : 'Learn more'}}>></span>
                 </a>
                 <i class="sub_brand_logo" :style="{backgroundImage: 'url(' + item.logoPicUrl +')'}"></i>
                 <p class="sub_brand_describe" v-html="item.content"></p>
@@ -34,7 +34,7 @@
             }
         },
         methods: {
-            getBrandsDetial() {
+            getData() {
                 getBrandDetialData({
                     languageType: this.language
                 }).then(res => {
@@ -49,10 +49,15 @@
             }
         },
         created() {
-            this.getBrandsDetial()
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
+            this.getData()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getData()
+            })
         }
     }
 </script>
 <style>
-    @import '../../assets/mless/brandsCenter/brandsCenter.css'
+    @import '../../assets/mless/brandsCenter/brandsCenter.css';
 </style>

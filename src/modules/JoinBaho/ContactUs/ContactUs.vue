@@ -12,22 +12,23 @@
                         <li>
                             <i class="contact_icon contact_icon_dh"></i>
                             <p class="contact_text">
-                                <span>{{language == 'zh' ? '联系方式' : 'Contact Information'}}：</span>
-                                <span>400-967-8655</span>
+                                <span>{{language == 'zh' ? '联系方式' : 'Tel'}}：</span>
+                                <span>{{companyPhone}}</span>
                             </p>
                         </li>
                         <li>
                             <i class="contact_icon contact_icon_dz"></i>
-                            <p class="contact_text">
+                            <p :class="['contact_text', {en_text: language === 'en'}]">
                                 <span>{{language == 'zh' ? '公司地址': 'Company Address'}}：</span>
-                                <span>{{language == 'zh' ? '杭州市滨江区江陵路88号万轮科技园5号楼': 'Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang'}}</span>
+                                <span>{{companyAddress}}</span>
+                                <!-- <span>{{language == 'zh' ? '杭州市滨江区江陵路88号万轮科技园5号楼': 'Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang'}}</span> -->
                             </p>
                         </li>
                         <li>
                             <i class="contact_icon contact_icon_yx"></i>
                             <p class="contact_text">
                                 <span>{{language == 'zh' ? '公司邮箱' : 'Email'}}：</span>
-                                <span>bahogroup@baho.cn</span>
+                                <span>{{companyEmail}}</span>
                             </p>
                         </li>
                     </ul>
@@ -59,12 +60,16 @@
     </div>
 </template>
 <script>
+    import { GetContactInfo } from '@/utils/https.js'
     export default {
         name: 'ContactUs',
         data() {
             return {
                 language: 'zh',
-                addressText: ''
+                addressText: '',
+                companyPhone: '',
+                companyAddress: '',
+                companyEmail: '',
             }
         },
         methods: {
@@ -86,10 +91,19 @@
                 info.push(addressText)
                 var infoWindow = new window.AMap.InfoWindow({ content: info.join('<br/>') })
                 infoWindow.open(map, map.getCenter())
+            },
+            getData() {
+                GetContactInfo({
+                    languageType: this.language
+                }, res => {
+                    this.companyPhone = res.body.info[0].phone
+                    this.companyAddress = res.body.info[0].address
+                    this.companyEmail = res.body.info[0].email
+                })
             }
         },
         created() {
-            
+            this.getData()
         },
         mounted () {
             this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
@@ -102,6 +116,7 @@
             }
             this.$Bus.$on('changeLanguage', language => {
                 this.language = language
+                this.getData()
                 if(language == 'zh') {
                     this.addressText = '<div> <p style="font-size:12px">杭州市滨江区江陵路88号万轮科技园5号楼</p></div>'
                     this.handleMap('zh_cn', this.addressText)

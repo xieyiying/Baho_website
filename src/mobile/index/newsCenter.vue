@@ -3,7 +3,7 @@
         <div class="news_title" :style="{backgroundImage: 'url(' + newsBgImage +')'}">
             <h1>{{newsTitle}}</h1>
             <h3>{{newsSubTitle}}</h3>
-            <router-link to="/news" class="see_all">查看全部&nbsp;>></router-link>
+            <router-link to="/news" class="see_all">{{language === 'zh' ? '查看全部' : 'See All'}}&nbsp;>></router-link>
         </div>
         <div class="news_content">
             <ul class="news_content_top">
@@ -52,6 +52,7 @@
                     num: 'three'
                 }).then(res => {
                     if(res.success) {
+                        this.newsBgImage = res.body.title.picUrl
                         this.newsTitle = res.body.title.name // 新闻标题
                         this.newsSubTitle = res.body.title.chirdenTitle // 新闻子标题
                         this.topNewsList = res.body.topList // 顶部新闻数组
@@ -61,7 +62,12 @@
             },
         },
         created() {
+            this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
             this.getNewsData()
+            this.$mBus.$on('changeLanguage', language => {
+                this.language = language
+                this.getNewsData()
+            })
         }
     }
 </script>

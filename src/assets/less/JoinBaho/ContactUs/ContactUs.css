@@ -66,6 +66,9 @@
   margin-right: 10px;
   color: #333;
 }
+.contact_us .contact_us_contant .contact_info .contact_info_left .info_detial li .contact_text.en_text {
+  margin-right: 0;
+}
 .contact_us .contact_us_contant .contact_info .contact_info_left .info_detial li .contact_text span {
   display: block;
 }
