@@ -26,7 +26,7 @@
                     </template>
                 </template>
                 <template>
-                    <el-submenu index="index" key="immediately">
+                    <el-submenu index="1" key="immediately">
                         <template slot="title">
                             <span slot="title">{{language === 'zh' ? '马上联系' : 'Contact'}}</span>
                         </template>
@@ -95,7 +95,7 @@
             // hash跳转
             changHash(id, index) {
                 this.isActive = index
-                // let pageId = id.substring(id.indexOf('#'))
+                let pageId = id.substring(id.indexOf('#') + 1)
                 // let hashId = document.querySelector(pageId)
                 // let y = hashId.offsetTop
                 // while(hashId == hashId.offsetParent) {
@@ -104,8 +104,13 @@
                 // y -= 65
                 // window.scrollTo(0, y)
                 this.isShowNav = false
-                this.$router.push({path: '/index'})
-                this.$mBus.$emit('hashJump', id)
+                if(pageId == 'home' || pageId == 'about' || pageId == 'responsibility') {
+                    this.$router.push({path: '/index'})
+                    this.$mBus.$emit('hashJump', id)
+                } else {
+                    this.$router.push({name: pageId})
+                }
+                
             },
             // 获取导航数据
             getData() {
@@ -129,8 +134,8 @@
             // 切换语言
             changeLanguage(language) {
                 this.language = language
-                this.$mBus.$emit('changeLanguage', this.language)
-                localStorage.setItem('language', this.language)
+                localStorage.setItem('language', language)
+                this.$mBus.$emit('changeLanguage', language)
                 this.getData()
                 this.isShowNav = false
             },
@@ -151,4 +156,5 @@
 </script>
 <style>
     @import '../../assets/mless/mHeader/mHeader.css';
+
 </style>

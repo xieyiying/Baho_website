@@ -37,6 +37,9 @@
   border-top-right-radius: 0.2rem;
   margin-bottom: 0.5rem;
 }
+.yd_brands_center .sub_brands li:nth-child(3) a span {
+  display: none;
+}
 .yd_brands_center .sub_brands li a {
   width: 99.5%;
   height: 3.03rem;
@@ -56,7 +59,7 @@
 }
 .yd_brands_center .sub_brands li a span::after {
   content: '';
-  width: 1.3rem;
+  width: 100%;
   height: 0.01rem;
   background-color: #0e2e55;
   display: block;
@@ -67,7 +70,7 @@
 .yd_brands_center .sub_brands li .sub_brand_logo {
   display: block;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   margin: 0 auto;
 }
 .yd_brands_center .sub_brands li:first-child .sub_brand_logo {

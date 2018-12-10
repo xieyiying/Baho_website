@@ -41,8 +41,12 @@
   font-size: 0.32rem;
 }
 .news_content .news_content_top li .top_news_content {
+  width: 3.2rem;
   padding-left: 0.21rem;
   font-size: 0.28rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .news_content .news_content_bottom {
   margin-top: 0.45rem;
@@ -74,4 +78,7 @@
   width: 6.15rem;
   padding-left: 0.21rem;
   font-size: 0.28rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

@@ -31,10 +31,12 @@
   margin-top: 0.68rem;
   border-top: 2px solid #f4f4f4;
   border-bottom: 2px solid #f4f4f4;
+  position: relative;
 }
 .yd_join_baho .promotional_video .video_box video {
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 .yd_join_baho .recruitment_info .recruitment_info_detial {
   margin-top: 0.4rem;

@@ -13,8 +13,8 @@
                     :key="index">
                     <router-link :to="{path: '/newsDetial', query: {newsId: item.id}}">
                         <span class="news_img" :style="{backgroundImage: 'url(' + item.name + ')'}"></span>
-                        <h2 class="top_news_title">{{item.title}}</h2>
-                        <p class="top_news_content text_over">{{item.content}}</p>
+                        <h2 class="top_news_title">{{item.mainTitle}}</h2>
+                        <div class="top_news_content text_over" v-html="item.title"></div>
                     </router-link>
                 </li>
             </ul>
@@ -22,8 +22,8 @@
                 <li v-for="(item, index) in bottomNewsList" :key="index">
                     <router-link :to="{path: '/newsDetial', query: {newsId: item.id}}">
                         <span class="news_img" :style="{backgroundImage: 'url(' + item.name + ')'}"></span>
-                        <h2 class="top_news_title">{{item.title}}</h2>
-                        <p class="top_news_content text_over">{{item.content}}</p>
+                        <h2 class="top_news_title">{{item.mainTitle}}</h2>
+                        <div class="top_news_content text_over" v-html="item.title"></div>
                     </router-link>
                 </li>
             </ul>
@@ -51,6 +51,7 @@
                     languageType: this.language,
                     num: 'three'
                 }).then(res => {
+                    console.log(res)
                     if(res.success) {
                         this.newsBgImage = res.body.title.picUrl
                         this.newsTitle = res.body.title.name // 新闻标题

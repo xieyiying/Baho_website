@@ -5,7 +5,7 @@
         </div>
         <div class="brand_describe">
             <h3>{{subTitle}}</h3>
-            <p>{{content}}</p>
+            <p v-html="content"></p>
         </div>
         <ul class="sub_brands">
             <li v-for="(item, index) in subBrandsArr" :key="index">

@@ -66,7 +66,11 @@
         padding: 0.5rem 0.3rem;
     }
     .yd_news_detial .news_content p {
-        line-height: 0.25rem;
+        line-height: 0.4rem;
+    }
+    .yd_news_detial .news_content p span{
+        display: inline-block;
+        line-height: 0.4rem;
     }
     .yd_news_detial .news_content img {
         width: 100%;

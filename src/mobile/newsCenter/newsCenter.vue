@@ -13,8 +13,8 @@
                 >
                     <router-link :to="{path: '/newsDetial', query: {newsId: news.id}}">
                         <span class="news_img" :style="{backgroundImage: 'url(' + news.name + ')'}"></span>
-                        <h2 class="top_news_title">{{news.title}}</h2>
-                        <p class="top_news_content text_over">{{news.content}}</p>
+                        <h2 class="top_news_title text_over">{{news.mainTitle}}</h2>
+                        <p class="top_news_content text_over" v-html="news.title"></p>
                     </router-link>
                 </li>
             </ul>
@@ -22,8 +22,8 @@
                 <li v-for="(news, index) in bottomNewsList" :key="index">
                     <router-link :to="{path: '/newsDetial', query: {newsId: news.id}}">
                         <span class="news_img" :style="{backgroundImage: 'url(' + news.name + ')'}"></span>
-                        <h2 class="top_news_title">{{news.title}}</h2>
-                        <p class="top_news_content text_over">{{news.content}}</p>
+                        <h2 class="top_news_title text_over">{{news.mainTitle}}</h2>
+                        <p class="top_news_content text_over" v-html="news.title"></p>
                     </router-link>
                 </li>
             </ul>
