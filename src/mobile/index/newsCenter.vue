@@ -51,7 +51,6 @@
                     languageType: this.language,
                     num: 'three'
                 }).then(res => {
-                    console.log(res)
                     if(res.success) {
                         this.newsBgImage = res.body.title.picUrl
                         this.newsTitle = res.body.title.name // 新闻标题

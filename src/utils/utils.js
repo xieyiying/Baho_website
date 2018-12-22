@@ -2,16 +2,15 @@ import axios from 'axios'
 import qs from 'qs'
 export default {
   // httpUrl: 'http://47.99.165.110:8068/',
-  httpUrl: process.env.NODE_ENV === 'development' ? '/api' : 'http://www.baho.cn/',
+  httpUrl: process.env.NODE_ENV === 'development' ? '/api/' : 'http://www.baho.cn/',
   // httpUrl: 'api/',
-
   Post (url, data, fn, next) {
     // var obj = Object.assign(data);
     var obj = qs.stringify(data)
     // 区别开发环境和生产环境
-    if (process.env.NODE_ENV === 'development') {
-      this.httpUrl = '/api/'
-    };
+    // if (process.env.NODE_ENV === 'development') {
+    //   this.httpUrl = '/api/'
+    // };
     axios.post(this.httpUrl + url, obj).then((re) => {
       fn(re.data)
       // 针对多个api异步调用时
@@ -25,9 +24,9 @@ export default {
   Get (url, data, fn, next) {
     var obj = Object.assign(data)
     // 区别开发环境和生产环境
-    if (process.env.NODE_ENV === 'development') {
-      this.httpUrl = '/api/'
-    };
+    // if (process.env.NODE_ENV === 'development') {
+    //   this.httpUrl = '/api/'
+    // };
     var params = this.hstringify(obj)
     axios.get(this.httpUrl + url + params).then((re) => {
       fn(re.data)

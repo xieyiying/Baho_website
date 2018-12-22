@@ -13,22 +13,24 @@
                             <i class="contact_icon contact_icon_dh"></i>
                             <p class="contact_text">
                                 <span>{{language == 'zh' ? '联系方式' : 'Tel'}}：</span>
-                                <span>{{companyPhone}}</span>
+                                <!-- <span>{{companyPhone}}</span> -->
+                                <span>0571-86573575</span>
                             </p>
                         </li>
                         <li>
                             <i class="contact_icon contact_icon_dz"></i>
                             <p :class="['contact_text', {en_text: language === 'en'}]">
                                 <span>{{language == 'zh' ? '公司地址': 'Company Address'}}：</span>
-                                <span>{{companyAddress}}</span>
-                                <!-- <span>{{language == 'zh' ? '杭州市滨江区江陵路88号万轮科技园5号楼': 'Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang'}}</span> -->
+                                <!-- <span>{{companyAddress}}</span> -->
+                                <span>{{language == 'zh' ? '杭州市滨江区江陵路88号万轮科技园5号楼': 'Building No. 5 Jiangling Road No. 88, Binjiang District,Hangzhou,Zhejiang'}}</span>
                             </p>
                         </li>
                         <li>
                             <i class="contact_icon contact_icon_yx"></i>
                             <p class="contact_text">
                                 <span>{{language == 'zh' ? '公司邮箱' : 'Email'}}：</span>
-                                <span>{{companyEmail}}</span>
+                                <!-- <span>{{companyEmail}}</span> -->
+                                <span>bahogroup@baho.com</span>
                             </p>
                         </li>
                     </ul>
@@ -103,7 +105,7 @@
             }
         },
         created() {
-            this.getData()
+            // this.getData()
         },
         mounted () {
             this.language = localStorage.getItem('language') ? localStorage.getItem('language') : 'zh'
